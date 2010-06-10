@@ -1,10 +1,12 @@
 /**
  * jDTScroll
  *
+ * @version      $Rev$
  * @author       rew (http://twitter.com/rewish)
  * @copyright    (c) 2010 誰が使うの？何の役にも立たないjQueryプラグイン
+ * @license      The MIT License
+ * @link         http://jdtplugins.googlecode.com/svn/trunk/jdtscroll/example.html
  *
- * $Revision$
  * $LastChangedBy$
  * $Date$
  */
@@ -18,7 +20,9 @@
 			muri: '\u30b9\u30af\u30ed\u30fc\u30eb\u30d0\u30fc\u300c'
 			    + '\u4eca\u65e5\u306f\u3053\u306e\u8fba\u3067\u52d8'
 			    + '\u5f01\u3057\u3068\u3044\u305f\u308b\u3002\u300d'
-			    + '\n(%muriPx%px\u304f\u3089\u3044\u305a\u308c\u305f)'
+			    + '\n(%muriPx%px\u304f\u3089\u3044\u305a\u308c\u305f)',
+			muimi: '\u65e2\u306b\u305d\u306e\u30dd\u30b8\u30b7\u30e7\u30f3'
+			     + '\u306f\u78ba\u4fdd\u3057\u3066\u308b\u305c\uff1f'
 		}, message);
 		var target = $('html, body'), isMuri, muriPx, fatigue = 0,
 		    easing = ['easeInElastic', 'easeOutElastic', 'easeInOutElastic']
@@ -26,10 +30,15 @@
 			var self = $(this), href = self.attr('href');
 			if (!href || !/#/.test(href)) return;
 			var uzaTop = $('#' + href.split('#')[1]).position().top;
-			self.click(function(e) {
+			self.click(function() {
+				var scrollTop = document.body.scrollTop;
+				if (uzaTop == scrollTop) {
+					alert(message['muimi']);
+					return false;
+				}
 				if (isMuri = Math.floor(Math.random() * 5) === 1) {
-					muriPx = Math.floor(Math.random() * Math.abs(e.pageY - uzaTop));
-					uzaTop += e.pageY <= uzaTop ? -muriPx : muriPx;
+					muriPx = Math.floor(Math.random() * Math.abs(scrollTop - uzaTop));
+					uzaTop += scrollTop <= uzaTop ? -muriPx : muriPx;
 				}
 				if ((++fatigue) > Math.floor(Math.random() * 5) + 2) {
 					fatigue = 0;
