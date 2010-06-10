@@ -24,29 +24,32 @@
 			muimi: '\u65e2\u306b\u305d\u306e\u30dd\u30b8\u30b7\u30e7\u30f3'
 			     + '\u306f\u78ba\u4fdd\u3057\u3066\u308b\u305c\uff1f'
 		}, message);
-		var target = $('html, body'), isMuri, muriPx, fatigue = 0,
+		var body = $('html, body'), isMuri, muriPx, fatigue = 0, target,
 		    easing = ['easeInElastic', 'easeOutElastic', 'easeInOutElastic']
 		return this.each(function() {
-			var self = $(this), href = self.attr('href');
-			if (!href || !/#/.test(href)) return;
-			var uzaTop = $('#' + href.split('#')[1]).position().top;
+			var self = $(this), targetTop;
+			try {
+				targetTop = $('#' + self.attr('href').split('#')[1]).position().top;
+			} catch(e) {
+				return;
+			}
 			self.click(function() {
 				var scrollTop = document.body.scrollTop;
-				if (uzaTop == scrollTop) {
+				if (targetTop == scrollTop) {
 					alert(message['muimi']);
 					return false;
 				}
 				if (isMuri = Math.floor(Math.random() * 5) === 1) {
-					muriPx = Math.floor(Math.random() * Math.abs(scrollTop - uzaTop));
-					uzaTop += scrollTop <= uzaTop ? -muriPx : muriPx;
+					muriPx = Math.floor(Math.random() * Math.abs(scrollTop - targetTop));
+					targetTop += scrollTop <= targetTop ? -muriPx : muriPx;
 				}
 				if ((++fatigue) > Math.floor(Math.random() * 5) + 2) {
 					fatigue = 0;
 					alert(message['yada']);
 					return false;
 				}
-				target.stop(true, true).animate(
-					{scrollTop: uzaTop},
+				body.stop(true, true).animate(
+					{scrollTop: targetTop},
 					(speed || 2000),
 					easing[Math.floor(Math.random() * 3)],
 					function() {
