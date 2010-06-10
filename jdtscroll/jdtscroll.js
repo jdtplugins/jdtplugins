@@ -22,18 +22,23 @@
 			    + '\u5f01\u3057\u3068\u3044\u305f\u308b\u3002\u300d'
 			    + '\n(%muriPx%px\u304f\u3089\u3044\u305a\u308c\u305f)',
 			muimi: '\u65e2\u306b\u305d\u306e\u30dd\u30b8\u30b7\u30e7\u30f3'
-			     + '\u306f\u78ba\u4fdd\u3057\u3066\u308b\u305c\uff1f'
+			     + '\u306f\u78ba\u4fdd\u3057\u3066\u308b\u305c\uff1f',
+			naize: '\u305d\u306e\u300c\u3075\u3089\u3050\u3081'
+			     + '\u3093\u3068\u300d\u306f\u5b58\u5728\u3057'
+			     + '\u306a\u3044\u3088\u3046\u3060\u305c\uff1f'
 		}, message);
 		var body = $('html, body'), isMuri, muriPx, fatigue = 0, target,
 		    easing = ['easeInElastic', 'easeOutElastic', 'easeInOutElastic']
 		return this.each(function() {
-			var self = $(this), targetTop;
+			var self = $(this), targetTop = null;
 			try {
 				targetTop = $('#' + self.attr('href').split('#')[1]).position().top;
-			} catch(e) {
-				return;
-			}
+			} catch(e) {}
 			self.click(function() {
+				if (!targetTop) {
+					alert(message['naize']);
+					return false;
+				}
 				var scrollTop = document.body.scrollTop;
 				if (targetTop == scrollTop) {
 					alert(message['muimi']);
