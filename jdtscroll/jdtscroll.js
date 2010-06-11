@@ -12,7 +12,7 @@
  */
 (function($) {
 
-	$.fn.dtScroll = function(speed, message) {
+	$.fn.jdtScroll = function(speed, message) {
 		message = $.extend({
 			yada: '\u30b9\u30af\u30ed\u30fc\u30eb\u30d0\u30fc'
 			    + '\u300c\u50cd\u304b\u305b\u3059\u304e\uff01'
@@ -44,11 +44,11 @@
 					alert(message['muimi']);
 					return false;
 				}
-				if (isMuri = Math.floor(Math.random() * 5) === 1) {
-					muriPx = Math.floor(Math.random() * Math.abs(scrollTop - targetTop));
+				if (isMuri = rand(0, 5) === 1) {
+					muriPx = rand(0, Math.abs(scrollTop - targetTop));
 					targetTop += scrollTop <= targetTop ? -muriPx : muriPx;
 				}
-				if ((++fatigue) > Math.floor(Math.random() * 5) + 2) {
+				if ((++fatigue) > rand(2, 5)) {
 					fatigue = 0;
 					alert(message['yada']);
 					return false;
@@ -56,7 +56,7 @@
 				body.stop(true, true).animate(
 					{scrollTop: targetTop},
 					(speed || 2000),
-					easing[Math.floor(Math.random() * 3)],
+					easing[rand(0, 3)],
 					function() {
 						if (!isMuri) return;
 						isMuri = false;
@@ -66,7 +66,10 @@
 				return false;
 			});
 		});
+	}
 
+	function rand(min, max) {
+		return Math.floor(Math.random() * max) + min;
 	}
 
 	/*
