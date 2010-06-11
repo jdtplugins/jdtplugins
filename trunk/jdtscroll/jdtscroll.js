@@ -12,7 +12,11 @@
  */
 (function($) {
 
-	$.fn.jdtScroll = function(speed, message) {
+	$.fn.jdtScroll = function(speed, message, easing) {
+		// 普通の引数
+		speed = (speed || 2000) / 2;
+
+		// 隠し引数
 		message = $.extend({
 			yada: '\u30b9\u30af\u30ed\u30fc\u30eb\u30d0\u30fc'
 			    + '\u300c\u50cd\u304b\u305b\u3059\u304e\uff01'
@@ -27,40 +31,71 @@
 			     + '\u3093\u3068\u300d\u306f\u5b58\u5728\u3057'
 			     + '\u306a\u3044\u3088\u3046\u3060\u305c\uff1f'
 		}, message);
-		var body = $('html, body'), isMuri, muriPx, fatigue = 0, target,
-		    easing = ['easeInElastic', 'easeOutElastic', 'easeInOutElastic']
+
+		// 本当の隠し引数
+		easing = easing || [
+			'easeInElastic', 'easeOutElastic', 'easeInBack',
+			'easeOutBack', 'easeInBounce', 'easeOutBounce'
+		];
+
+		var target = $('html, body'), isMuri, muriPx,
+		    fatigue = 0, uzasaMax = easing.length - 1;
+
 		return this.each(function() {
 			var self = $(this), targetTop = null;
 			try {
 				targetTop = $('#' + self.attr('href').split('#')[1]).position().top;
 			} catch(e) {}
 			self.click(function() {
+				target.clearQueue();
+
+				// The Naize
 				if (!targetTop) {
 					alert(message['naize']);
 					return false;
 				}
+
 				var scrollTop = document.body.scrollTop;
-				if (targetTop == scrollTop) {
+
+				// The Muimi
+				if (targetTop === scrollTop) {
 					alert(message['muimi']);
 					return false;
 				}
+
+				// Murikamo?
 				if (isMuri = rand(0, 3) === 1) {
 					muriPx = rand(0, Math.abs(scrollTop - targetTop));
 					targetTop += scrollTop <= targetTop ? -muriPx : muriPx;
 				}
+
+				// The Yada
 				if ((++fatigue) > rand(2, 4)) {
 					fatigue = 0;
 					alert(message['yada']);
 					return false;
 				}
-				body.stop(true, true).animate(
-					{scrollTop: targetTop},
-					(speed || 2000),
-					easing[rand(0, 2)],
+
+				// Boin Boin
+				target.animate(
+					{scrollTop: targetTop / 2},
+					speed,
+					easing[rand(0, uzasaMax)],
 					function() {
-						if (!isMuri) return;
-						isMuri = false;
-						alert(message['muri'].replace(/%muriPx%/, muriPx));
+						// Boin Boin
+						target.animate(
+							{scrollTop: targetTop},
+							speed,
+							easing[rand(0, uzasaMax)],
+							function() {
+								if (!isMuri) return;
+								isMuri = false;
+								// The Muri
+								setTimeout(function() {
+									alert(message['muri'].replace(/%muriPx%/, muriPx));
+								}, 0);
+							}
+						);
 					}
 				);
 				return false;
@@ -123,13 +158,27 @@
 			else var s = p/(2*Math.PI) * Math.asin (c/a);
 			return a*Math.pow(2,-10*t) * Math.sin( (t*d-s)*(2*Math.PI)/p ) + c + b;
 		},
-		easeInOutElastic: function (x, t, b, c, d) {
-			var s=1.70158;var p=0;var a=c;
-			if (t==0) return b;  if ((t/=d/2)==2) return b+c;  if (!p) p=d*(.3*1.5);
-			if (a < Math.abs(c)) { a=c; var s=p/4; }
-			else var s = p/(2*Math.PI) * Math.asin (c/a);
-			if (t < 1) return -.5*(a*Math.pow(2,10*(t-=1)) * Math.sin( (t*d-s)*(2*Math.PI)/p )) + b;
-			return a*Math.pow(2,-10*(t-=1)) * Math.sin( (t*d-s)*(2*Math.PI)/p )*.5 + c + b;
+		easeInBack: function (x, t, b, c, d, s) {
+			if (s == undefined) s = 1.70158;
+			return c*(t/=d)*t*((s+1)*t - s) + b;
+		},
+		easeOutBack: function (x, t, b, c, d, s) {
+			if (s == undefined) s = 1.70158;
+			return c*((t=t/d-1)*t*((s+1)*t + s) + 1) + b;
+		},
+		easeInBounce: function (x, t, b, c, d) {
+			return c - jQuery.easing.easeOutBounce (x, d-t, 0, c, d) + b;
+		},
+		easeOutBounce: function (x, t, b, c, d) {
+			if ((t/=d) < (1/2.75)) {
+				return c*(7.5625*t*t) + b;
+			} else if (t < (2/2.75)) {
+				return c*(7.5625*(t-=(1.5/2.75))*t + .75) + b;
+			} else if (t < (2.5/2.75)) {
+				return c*(7.5625*(t-=(2.25/2.75))*t + .9375) + b;
+			} else {
+				return c*(7.5625*(t-=(2.625/2.75))*t + .984375) + b;
+			}
 		}
 	});
 
