@@ -44,7 +44,7 @@
 					alert(message['muimi']);
 					return false;
 				}
-				if (isMuri = rand(0, 4) === 1) {
+				if (isMuri = rand(0, 3) === 1) {
 					muriPx = rand(0, Math.abs(scrollTop - targetTop));
 					targetTop += scrollTop <= targetTop ? -muriPx : muriPx;
 				}
