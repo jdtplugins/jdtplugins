@@ -11,7 +11,7 @@
 		var c = $.extend({
 			listener: 'click dblclick contextmenu',
 			dialog: true,
-			message: 'ちょっ、まじクリックとかでありえないんですけど。'
+			message: 'ちょっ、まじクリックとかありえないんですけど。'
 		}, options);
 		
 		$(this).bind(c.listener, function() {
