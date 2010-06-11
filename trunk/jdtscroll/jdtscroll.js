@@ -44,11 +44,11 @@
 					alert(message['muimi']);
 					return false;
 				}
-				if (isMuri = rand(0, 5) === 1) {
+				if (isMuri = rand(0, 4) === 1) {
 					muriPx = rand(0, Math.abs(scrollTop - targetTop));
 					targetTop += scrollTop <= targetTop ? -muriPx : muriPx;
 				}
-				if ((++fatigue) > rand(2, 5)) {
+				if ((++fatigue) > rand(2, 4)) {
 					fatigue = 0;
 					alert(message['yada']);
 					return false;
@@ -56,7 +56,7 @@
 				body.stop(true, true).animate(
 					{scrollTop: targetTop},
 					(speed || 2000),
-					easing[rand(0, 3)],
+					easing[rand(0, 2)],
 					function() {
 						if (!isMuri) return;
 						isMuri = false;
@@ -69,7 +69,7 @@
 	}
 
 	function rand(min, max) {
-		return Math.floor(Math.random() * max) + min;
+		return Math.floor(Math.random() * (max + 1)) + min;
 	}
 
 	/*
