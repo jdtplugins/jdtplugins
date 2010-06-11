@@ -1,14 +1,5 @@
 @charset "utf-8";
 
-/*-----------------------------------------------------------
-
- default.css
- 
- Reset the default browser settings,
- cause this file makes major borwser styles even. 
- 
- ------------------------------------------------------------*/
-
 html, body, div,
 dl, dt, dd, ul, ol, li,
 h1, h2, h3, h4, h5, h6,
@@ -17,10 +8,8 @@ pre, form, fieldset, input, textarea, p, blockquote, th, td {
   padding: 0;
 }
 
+html { overflow-y: scroll }
 body { line-height: 1.4 }
-body * {
-	font-family: "Lucida Sans Unicode","Lucida Grande",Arial,Helvetica,"ヒラギノ丸ゴ Pro W4",HiraMaruPro-W4,"ヒラギノ角ゴ Pro W3","メイリオ",Meiryo,Osaka,sans-serif;
-}
 ul, ol {	list-style: none }
 table {	border-collapse: collapse }
 img, fieldset { border: none }

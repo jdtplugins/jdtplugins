@@ -11,7 +11,7 @@ version: 2.6.0
  * x-small is for IE6/7 quirks mode.
  */
 body {
-	font:13px/1.231 Helvetica, Verdana, sans-serif;
+	font:13px/1.231 arial,helvetica,clean,sans-serif;
 	*font-size:small; /* for IE */
 	*font:x-small; /* for IE in quirks mode */
 }
@@ -23,7 +23,7 @@ select,
 input,
 button,
 textarea {
-	font:99% "Lucida Sans Unicode","Lucida Grande",Arial,Helvetica,"ヒラギノ丸ゴ Pro W4",HiraMaruPro-W4,"ヒラギノ角ゴ Pro W3","メイリオ",Meiryo,Osaka,sans-serif;
+	font:99% arial,helvetica,clean,sans-serif;
 }
 
 /**
@@ -42,7 +42,7 @@ code,
 kbd,
 samp,
 tt {
-	font-family:"Lucida Sans Unicode","Lucida Grande",Arial,Helvetica,"ヒラギノ丸ゴ Pro W4",HiraMaruPro-W4,"ヒラギノ角ゴ Pro W3","メイリオ",Meiryo,Osaka,sans-serif;
+	font-family:monospace;
 	*font-size:108%;
 	line-height:100%;
 }

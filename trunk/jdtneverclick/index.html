@@ -1,26 +1,141 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"> 
-<html xmlns="http://www.w3.org/1999/xhtml"> 
-<head> 
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /> 
-	<meta http-equiv="Content-Style-Type" content="text/css" /> 
-	<meta http-equiv="Content-Script-Type" content="text/javascript" /> 
-	<title>NeverClick : jQueryプラグイン サンプル</title> 
-	<link type="text/css" rel="stylesheet" href="css/import.css" /> 
-	<script type="text/javascript" src="http://www.google.com/jsapi"></script> 
-	<script type="text/javascript">google.load("jquery", "1.4.2");</script>
-	<script type="text/javascript" src="js/jdtneverclick.js"></script> 
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta http-equiv="Content-Style-Type" content="text/css" />
+	<meta http-equiv="Content-Script-Type" content="text/javascript" />
+	<title>右クリックどころかクリックすら禁止するjQueryプラグイン jDTNeverClick</title>
+	<link rel="stylesheet" type="text/css" href="css/style.css" />
+	<script type="text/javascript" src="js/lib/jquery.js"></script>
+	<script type="text/javascript" src="js/jdtneverclick.js"></script>
 	<script type="text/javascript">
-		jQuery(function($) {
-			$(document).jdtNeverClick();
-		});
-	</script> 
-</head> 
- 
+		$(document).jdtNeverClick();
+	</script>
+</head>
+
 <body>
 
-	<div id="contents">
-		あああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああ
-	</div>
+<div id="changeStatus">
+	<h1>Easingプラグインを使ったページスクロールサンプル &gt; <a href="http://moto-mono.net/easingScroll/">アーカイブ</a> &gt; <a href="http://moto-mono.net">5509</a></h1>
+	<select id="changeEasing">
+		<option value="linear">linear</option>
+		<option value="swing">swing</option>
+		<option value="jswing">jswing</option>
+		<option value="easeInQuad">easeInQuad</option>
+		<option value="easeOutQuad">easeOutQuad</option>
+		<option value="easeInOutQuad">easeInOutQuad</option>
+		<option value="easeInCubic">easeInCubic</option>
+		<option value="easeOutCubic">easeOutCubic</option>
+		<option value="easeInOutCubic">easeInOutCubic</option>
+		<option value="easeInQuart">easeInQuart</option>
+		<option value="easeOutQuart">easeOutQuart</option>
+		<option value="easeInOutQuart">easeInOutQuart</option>
+		<option value="easeInSine">easeInSine</option>
+		<option value="easeOutSine">easeOutSine</option>
+		<option value="easeInOutSine">easeInOutSine</option>
+		<option value="easeInExpo">easeInExpo</option>
+		<option value="easeOutExpo">easeOutExpo</option>
+		<option value="easeInOutExpo">easeInOutExpo</option>
+		<option value="easeInCirc">easeInCirc</option>
+		<option value="easeOutCirc">easeOutCirc</option>
+		<option value="easeInOutCirc">easeInOutCirc</option>
+		<option value="easeInElastic">easeInElastic</option>
+		<option value="easeOutElastic">easeOutElastic</option>
+		<option value="easeInOutElastic">easeInOutElastic</option>
+		<option value="easeInBack">easeInBack</option>
+		<option value="easeOutBack">easeOutBack</option>
+		<option value="easeInOutBack">easeInOutBack</option>
+		<option value="easeInBounce">easeInBounce</option>
+		<option value="easeOutBounce">easeOutBounce</option>
+		<option value="easeInOutBounce">easeInOutBounce</option>
+	</select>
+	<input id="duration" value="400" />
+	<span>durationは400～1200が適正</span>
+</div>
 
-</body> 
-</html> 
+<ul id="nav">
+	<li id="na1"><a href="#a1">a-1</a></li>
+	<li id="na2"><a href="#a2">a-2</a></li>
+	<li id="na3"><a href="#a3">a-3</a></li>
+	<li id="na4"><a href="#a4">a-4</a></li>
+	<li id="na5"><a href="#a5">a-5</a></li>
+	<li id="nb1"><a href="#b1">b-1</a></li>
+	<li id="nb2"><a href="#b2">b-2</a></li>
+	<li id="nb3"><a href="#b3">b-3</a></li>
+	<li id="nb4"><a href="#b4">b-4</a></li>
+	<li id="nb5"><a href="#b5">b-5</a></li>
+	<li id="nc1"><a href="#c1">c-1</a></li>
+	<li id="nc2"><a href="#c2">c-2</a></li>
+	<li id="nc3"><a href="#c3">c-3</a></li>
+	<li id="nc4"><a href="#c4">c-4</a></li>
+	<li id="nc5"><a href="#c5">c-5</a></li>
+	<li id="nd1"><a href="#d1">d-1</a></li>
+	<li id="nd2"><a href="#d2">d-2</a></li>
+	<li id="nd3"><a href="#d3">d-3</a></li>
+	<li id="nd4"><a href="#d4">d-4</a></li>
+	<li id="nd5"><a href="#d5">d-5</a></li>
+	<li id="ne1"><a href="#e1">e-1</a></li>
+	<li id="ne2"><a href="#e2">e-2</a></li>
+	<li id="ne3"><a href="#e3">e-3</a></li>
+	<li id="ne4"><a href="#e4">e-4</a></li>
+	<li id="ne5"><a href="#e5">e-5</a></li>
+</ul>
+
+<div class="section" id="a1">
+</div>
+<div class="section" id="a2">
+</div>
+<div class="section" id="a3">
+</div>
+<div class="section" id="a4">
+</div>
+<div class="section" id="a5">
+</div>
+
+<div class="section" id="b1">
+</div>
+<div class="section" id="b2">
+</div>
+<div class="section" id="b3">
+</div>
+<div class="section" id="b4">
+</div>
+<div class="section" id="b5">
+</div>
+
+<div class="section" id="c1">
+</div>
+<div class="section" id="c2">
+</div>
+<div class="section" id="c3">
+</div>
+<div class="section" id="c4">
+</div>
+<div class="section" id="c5">
+</div>
+
+<div class="section" id="d1">
+</div>
+<div class="section" id="d2">
+</div>
+<div class="section" id="d3">
+</div>
+<div class="section" id="d4">
+</div>
+<div class="section" id="d5">
+</div>
+
+<div class="section" id="e1">
+</div>
+<div class="section" id="e2">
+</div>
+<div class="section" id="e3">
+</div>
+<div class="section" id="e4">
+</div>
+<div class="section" id="e5">
+</div>
+
+</body>
+</html>

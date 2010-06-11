@@ -1,0 +1,201 @@
+@charset "utf-8";
+
+* {
+	margin: 0;
+	padding: 0;
+}
+
+html,body {
+	height: 100%;
+}
+
+div#changeStatus {
+	position: fixed;
+	top: 2%;
+	left: 2%;
+	z-index: 10000;
+}
+
+div#changeStatus h1 {
+	color: #fff;
+	font-size: 108%;
+}
+
+	div#changeStatus h1 a {
+		color: #fff;
+		font-size: 86%;
+	}
+	div#changeStatus h1 a:hover {
+		text-decoration: none;
+	}
+
+div#changeStatus span {
+	color: #fff;
+	font-size: 77%;
+}
+
+ul#nav {
+	list-style: none;
+	margin-top: -250px;
+	margin-left: -250px;
+	position: fixed;
+	left: 50%;
+	top: 50%;
+	width: 500px;
+	height: 500px;
+	z-index: 10000;
+}
+
+	ul#nav li {
+		float: left;
+		width: 100px;
+	}
+	
+		ul#nav li a {
+			border: solid transparent 4px;
+			display: block;
+			height: 92px;
+			color: #fff;
+			font-weight: bold;
+			text-align: center;
+			text-decoration: none;
+			line-height: 92px;
+		}
+		ul#nav li a:hover {
+			border: solid #fff 4px;
+		}
+	
+div.section {
+	width: 100%;
+	height: 100%;
+	position: absolute;
+}
+
+li#na1,
+li#nb5,
+li#nc4,
+li#nd3,
+li#ne2,
+div#a1,
+div#b5,
+div#c4,
+div#d3,
+div#e2 {
+	background: #36362c;
+}
+
+li#na2,
+li#nb1,
+li#nc5,
+li#nd4,
+li#ne3,
+div#a2,
+div#b1,
+div#c5,
+div#d4,
+div#e3 {
+	background: #5d917d;
+}
+
+li#na3,
+li#nb2,
+li#nc1,
+li#nd5,
+li#ne4,
+div#a3,
+div#b2,
+div#c1,
+div#d5,
+div#e4 {
+	background: #a8ad80;
+}
+
+li#na4,
+li#nb3,
+li#nc2,
+li#nd1,
+li#ne5,
+div#a4,
+div#b3,
+div#c2,
+div#d1,
+div#e5 {
+	background: #e6d4a7;
+}
+
+li#na5,
+li#nb4,
+li#nc3,
+li#nd2,
+li#ne1,
+div#a5,
+div#b4,
+div#c3,
+div#d2,
+div#e1 {
+	background: #825534;
+}
+
+div#a2,
+div#b2,
+div#c2,
+div#d2,
+div#e2 {
+	left: 100%;
+}
+
+div#a3,
+div#b3,
+div#c3,
+div#d3,
+div#e3 {
+	left: 200%;
+}
+
+div#a4,
+div#b4,
+div#c4,
+div#d4,
+div#e4 {
+	left: 300%;
+}
+
+div#a5,
+div#b5,
+div#c5,
+div#d5,
+div#e5 {
+	left: 400%;
+}
+
+div#b1,
+div#b2,
+div#b3,
+div#b4,
+div#b5 {
+	top: 100%;
+}
+
+div#c1,
+div#c2,
+div#c3,
+div#c4,
+div#c5 {
+	top: 200%;
+}
+
+div#d1,
+div#d2,
+div#d3,
+div#d4,
+div#d5 {
+	top: 300%;
+}
+
+div#e1,
+div#e2,
+div#e3,
+div#e4,
+div#e5 {
+	top: 400%;
+}
