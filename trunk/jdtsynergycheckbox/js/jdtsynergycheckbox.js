@@ -22,7 +22,7 @@
 			if ( !$(this).is(':checkbox') ) return false;
 			var $name = $(this).attr('name');
 			
-			if ( !c.special ) {
+			if ( c.special ) {
 				if ( !$(this).is(':checked') ) {
 					$('input[name="'+ $name +'"]').removeAttr('checked');
 				} else {
