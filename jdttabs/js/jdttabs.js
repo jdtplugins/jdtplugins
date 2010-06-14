@@ -12,7 +12,8 @@
 
 	$.fn.jdtTabs = function(options) {
 		var c = $.extend({
-				message: 'このタブの中身はいただいた。'
+				steal: 'このタブの中身はいただいた。',
+				stole: 'ばっかもーん！そいつがルパンだー！'
 			}, options),
 			tabs = $('.tab li a', this),
 			tabSection = [],
@@ -26,7 +27,9 @@
 			}
 		}
 		
-		tabSection[Math.floor(Math.random() * tabSection.length)].html(c.message);
+		var target = Math.floor(Math.random() * tabSection.length);
+		$(tabs[target]).addClass('steal');
+		tabSection[target].html(c.steal);
 		
 		if ( active == null ) {
 			active = tabs[0].hash;
@@ -35,6 +38,13 @@
 		$(active).show();
 		
 		$(tabs).click(function() {
+			if ( /steal/.test(this.className) ) {
+				for ( var i=0; i<tabSection.length; i++ ) {
+					if ( this.hash != '#' + tabSection[i].attr('id') ) {
+						tabSection[i].html(c.stole);
+					}
+				}
+			}
 			var $thisID = this.hash;
 			for ( var i=0; i<tabSection.length; i++ ) {
 				tabSection[i].hide();
