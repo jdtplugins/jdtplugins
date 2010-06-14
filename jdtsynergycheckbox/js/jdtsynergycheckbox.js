@@ -4,9 +4,9 @@
  * @author       nori (http://twitter.com/5509)
  * @copyright    (c) 2010 誰が使うの？何の役にも立たないjQueryプラグイン
  * @license      The MIT License
- * @link         http://jdtplugins.googlecode.com/svn/trunk/jdtscroll/example.html
+ * @link         http://jdtplugins.googlecode.com/svn/trunk/jdtsynergycheckbox/index.html
  *
- * $Date: 2010-06-11 17:30:40 +0900 (Fri, 11 Jun 2010) $
+ * $Date: 2010-06-14 14:20
  */
 (function($) {
 
