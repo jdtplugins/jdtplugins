@@ -32,7 +32,7 @@
 				alert('チェックボックスたち: 「' + c.message[Math.floor(Math.random() * c.message.length)] + '」');
 			} else {
 				if ( !$(this).is(':checked') ) {
-					$(this).removeAttr('checked');
+					$('input[name="'+ $name +'"]').removeAttr('checked');
 				} else {
 					var sp = $('input[name="'+ $name +'"]').not(this);
 					for ( var i=0; i<sp.length; i++ ) {
