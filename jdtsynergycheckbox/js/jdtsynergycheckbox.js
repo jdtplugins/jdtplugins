@@ -20,27 +20,32 @@
 			
 		$(this).click(function() {
 			if ( !$(this).is(':checkbox') ) return false;
-			var $name = $(this).attr('name');
+			var $name = $(this).attr('name'),
+				group = $('input[name="'+ $name +'"]');
+				
+			group.each(function(i) {
+				group[i].nameData = i+1;
+			});
 			
 			if ( c.special ) {
 				if ( !$(this).is(':checked') ) {
-					$('input[name="'+ $name +'"]').removeAttr('checked');
+					group.removeAttr('checked');
 				} else {
-					$('input[name="'+ $name +'"]').attr('checked','checked');
+					group.attr('checked','checked');
 				}
 				
 				alert('チェックボックスたち: 「' + c.message[Math.floor(Math.random() * c.message.length)] + '」');
 			} else {
 				if ( !$(this).is(':checked') ) {
-					$('input[name="'+ $name +'"]').removeAttr('checked');
+					group.removeAttr('checked');
 				} else {
-					var sp = $('input[name="'+ $name +'"]').not(this);
+					var sp = group.not(this);
 					for ( var i=0; i<sp.length; i++ ) {
 						if ( i==(sp.length-1) ) {
-							alert('じゃあ俺も!');
+							alert('チェックボックス' + sp[i].nameData + '「じゃあ俺も!」');
 							$(sp[i]).attr('checked','checked');
 							
-							alert('どうぞどうぞ');
+							alert('チェックボックス1～' + sp.length + '「どうぞどうぞ」');
 							$(this).removeAttr('checked');
 							for ( var j=0; j<sp.length; j++ ) {
 								if ( j!=(sp.length-1) ) {
@@ -48,7 +53,7 @@
 								}
 							}
 						} else {
-							alert('チェックボックス「俺も！」');
+							alert('チェックボックス' + sp[i].nameData + '「俺も！」');
 							$(sp[i]).attr('checked','checked');
 						}	
 					}	
