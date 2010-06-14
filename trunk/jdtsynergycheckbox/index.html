@@ -12,7 +12,10 @@
 	<script type="text/javascript" src="js/jdtsynergycheckbox.js"></script>
 	<script type="text/javascript">
 	jQuery(function($){
-		$('input').jdtSynergyCheckbox();
+		$('#normal input').jdtSynergyCheckbox();
+		$('#sp input').jdtSynergyCheckbox({
+			special: true
+		});
 	});
 	</script>
 </head>
@@ -24,7 +27,7 @@
 	<h2>このプラグインの感想を聞かせてください</h2>
 	<dl>
 		<dt>このプラグインについて</dt>
-		<dd>
+		<dd id="normal">
 			<label><input type="checkbox" name="name1" value="5" />かなりいい</label><br />
 			<label><input type="checkbox" name="name1" value="4" />いい</label><br />
 			<label><input type="checkbox" name="name1" value="3" />ふつー</label><br />
@@ -32,7 +35,7 @@
 			<label><input type="checkbox" name="name1" value="1" />しょうもない</label>
 		</dd>
 		<dt>もっと使ってみたい？</dt>
-		<dd>
+		<dd id="sp">
 			<label><input type="checkbox" name="name2" value="5" />当然</label><br />
 			<label><input type="checkbox" name="name2" value="4" />あれば使ってみたい</label><br />
 			<label><input type="checkbox" name="name2" value="3" />別に</label><br />
