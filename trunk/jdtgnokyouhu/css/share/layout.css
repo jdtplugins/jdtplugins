@@ -38,6 +38,9 @@ div#wrap {
 		padding-top: 10px;
 		min-height: 200px;
 	}
+	div#cont h1 {
+	   margin-bottom: 30px;
+	}
 	div#cont p {
 	   margin-bottom: 30px;
 	}
