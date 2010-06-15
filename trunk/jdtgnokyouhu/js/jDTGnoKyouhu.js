@@ -1,8 +1,8 @@
 /**
  * jDTTabs
  *
- * @Version		 $Rev$
- * @author       YusukeNakanishi (http://yusukenakanishi.com/)
+ * @Version      $Rev$
+ * @author       yusuke.nakanishi (http://yusukenakanishi.com/)
  * @copyright    (c) 2010 誰が使うの？何の役にも立たないjQueryプラグイン
  * @license      The MIT License
  * @link         http://jdtplugins.googlecode.com/svn/trunk/jDTGnoKyouhu/index.html
