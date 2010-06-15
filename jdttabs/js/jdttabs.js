@@ -17,24 +17,34 @@
 			}, options),
 			tabs = $('.tab li a', this),
 			tabSection = [],
-			active = null;
+			active = null,
+			activeIndex = null;
 						
 		for ( var i=0; i<tabs.length; i++ ) {
 			tabSection.push($(tabs[i].hash));
 			$(tabs[i].hash).hide();
 			if ( /active/.test(tabs[i].className) ) {
 				active = tabs[i].hash;
+				acitveIndex = i;
 			}
 		}
 		
+		if ( active == null ) {
+			active = tabs[0].hash;
+			activeIndex = 0;
+			$(tabs[0]).addClass('active');
+		}
+		
 		var target = Math.floor(Math.random() * tabSection.length);
+		if ( activeIndex == target && activeIndex == tabs.length-1 ) {
+			target--;
+		} else
+		if ( activeIndex == target ) {
+			target++;
+		}
 		$(tabs[target]).addClass('steal');
 		tabSection[target].html(c.steal);
 		
-		if ( active == null ) {
-			active = tabs[0].hash;
-			$(tabs[0]).addClass('active');
-		}
 		$(active).show();
 		
 		$(tabs).click(function() {
