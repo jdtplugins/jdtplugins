@@ -18,33 +18,33 @@
 		var nodes = this;
 
 		return nodes.not('[src*="'+ suffix +'."]').each(function() {
-			var img = $(this);
-			var src = img.attr('src');
-			var _on = [
-				src.substr(0, src.lastIndexOf('.')),
-				src.substring(src.lastIndexOf('.'))
+			var img = $(this), src = [img.attr('src')];
+			src[1] = [
+				src[0].substr(0, src[0].lastIndexOf('.')),
+				src[0].substring(src[0].lastIndexOf('.'))
 			].join(suffix);
+
+			$('<img/>').attr('src', src[1]);
 
 			var target = img, queue, isOn = false;
 
-			$('<img/>').attr('src', _on);
-
 			img.hover(
 				function() {
-					if (isOn = !isOn) {
-						target.attr('src', _on);
-					} else {
-						target.attr('src', src);
-						target = $(nodes[Math.floor(Math.random() * nodes.length)]);
-					}
+					target.attr('src', src[+(isOn = !isOn)]);
 					queue = setTimeout(arguments.callee, ikioi);
 				},
 				function() {
 					clearTimeout(queue);
-					target.attr('src', src);
+					target.attr('src', src[0]);
 				}
 			);
 		});
 	}
+
+	function getTarget(nodes) {
+		if (Math.floor(Math.random() * 5) !== 1) return;
+		return $(nodes[Math.floor(Math.random() * nodes.length)])
+	}
+
 
 })(jQuery)
