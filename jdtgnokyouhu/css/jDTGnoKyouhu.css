@@ -1,5 +1,16 @@
 @charset "utf-8";
 
+/**
+@prefix : <http://purl.org/net/ns/doas#> .
+<http://jdtplugins.googlecode.com/svn/trunk/jdtgnokyouhu/css/jDTGnoKyouhu.css> a :CSSstylesheet;
+ :shortdesc "jDTGnoKyouhu.css";
+ :created "2010-06-15";
+ :release [:revision "1.0"; :created "2010-06-15"];
+ :author [:name "Yusuke. Nakanishi"; :homepage <http://yusukenakanishi.com/> ];
+ :license <http://creativecommons.org/licenses/GPL/2.0/>;
+ :dependencies "none" .
+*/
+
 html {
     overflow: hidden;
 }
