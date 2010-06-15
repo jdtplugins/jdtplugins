@@ -1,0 +1,11 @@
+div#dtLightBoxLayer {
+	background: #000;
+	opacity: .6
+}
+
+div#dtLightBoxContainer {
+	border-radius: 5px;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	background: #fff;
+}

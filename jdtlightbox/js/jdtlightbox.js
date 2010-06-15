@@ -23,40 +23,71 @@
 				}
 			}, options),
 			$this = $(this),
-			$layer = $('<div id="dtLightBoxLayer"/>'),
-			$container = $('<div id="dtLightBoxContainer"/>'),
-			$loading = $('<div id="dtLightBoxLoading"/>'),
-			$close = $('<div id="dtLightBoxClose"/>'),
-			$image = $('<div id="dtLightBoxImage"/>');
+			dE = document.documentElement,
+			dEW = dE.clientWidth,
+			dEH = dE.clientHeight;
+			
+		$(window).resize(function() {
+			dEW = dE.clientWidth;
+			dEH = dE.clientHeight;
+		});
 		
-		$container.append(
-			$close,
-			$loading,
-			$image
-		);
 		$('body').append([
-			$layer,
-			$container
+			'<div id="dtLightBoxLayer"/>',
+			'<div id="dtLightBoxContainer">',
+				'<div id="dtLightBoxClose"/>',
+				'<div id="dtLightBoxImage"/>',
+			'</div>'
 		].join(''));
+		
+		var $layer = $('#dtLightBoxLayer').hide(),
+			$container = $('#dtLightBoxContainer'),
+			$close = $('#dtLightBoxClose'),
+			$image = $('#dtLightBoxImage');
+			
+		$layer.css({
+			width: dEW+'px',
+			height: dEH+'px',
+			position: 'fixed',
+			top: 0,
+			left: 0
+			/*marginTop: -document.documentElement.clientHeight/2,
+			marginLeft: -document.documentElement.clientWidth/2,
+			position: 'absolute',
+			top: '50%',
+			left: '50%'*/
+		});
 			
 		$this.click(function() {
-			$('#dtLightBoxLayer').show();
-			$('#dtLightBoxContainer').css({
+			return false;
+		});
+			
+		$this.click(function() {
+			$layer.show();
+			$container.css({
+				marginTop: -c.default.height/2,
+				marginLeft: -c.default.width/2,
 				width: c.default.width,
-				height: c.default.height
+				height: c.default.height,
+				position: 'absolute',
+				top: '50%',
+				left: '50%'
 			});
 			
 			var img = new Image();
 			img.src = this.href;
+			img.width = img.width;
+			img.height = img.height;
 			
 			$container.animate({
 				width: img.width,
 				height: img.height
 			},{
 				duration: 400,
-				easing: swing
+				easing: 'swing'
 			});
 			
+			return false;			
 		});
 	}
 
