@@ -1,12 +1,13 @@
 /**
  * jDTTabs
  *
+ * @Version		 $Rev$
  * @author       nori (http://twitter.com/5509)
  * @copyright    (c) 2010 誰が使うの？何の役にも立たないjQueryプラグイン
  * @license      The MIT License
  * @link         http://jdtplugins.googlecode.com/svn/trunk/jdttabs/index.html
  *
- * $Date: 2010-06-15 01:20
+ * $Date$
  */
 (function($) {
 
