@@ -13,14 +13,15 @@
 
 	$.fn.jdtLightBox = function(options) {
 		var c = $.extend({
-				default: {
+				defaultSize: {
 					width: 150,
 					height: 150
 				},
 				animateTo: {
 					width: 32,
 					height: 32
-				}
+				},
+				bgLayerOpacity: .7
 			}, options),
 			$this = $(this),
 			dE = document.documentElement,
@@ -37,13 +38,19 @@
 			'<div id="dtLightBoxContainer">',
 				'<div id="dtLightBoxClose"/>',
 				'<div id="dtLightBoxImage"/>',
-			'</div>'
+			'</div>',
+			'<div id="getImageLayer"/>'
 		].join(''));
 		
 		var $layer = $('#dtLightBoxLayer').hide(),
-			$container = $('#dtLightBoxContainer'),
+			$container = $('#dtLightBoxContainer').hide(),
 			$close = $('#dtLightBoxClose'),
-			$image = $('#dtLightBoxImage');
+			$image = $('#dtLightBoxImage').hide(),
+			$imageLayer = $('#getImageLayer').css({
+				height: 1,
+				width: 1,
+				overflow: 'hidden'
+			});
 			
 		$layer.css({
 			width: dEW+'px',
@@ -63,12 +70,12 @@
 		});
 			
 		$this.click(function() {
-			$layer.show();
-			$container.css({
-				marginTop: -c.default.height/2,
-				marginLeft: -c.default.width/2,
-				width: c.default.width,
-				height: c.default.height,
+			$layer.css('opacity', c.bgLayerOpacity).show();
+			$container.show().css({
+				marginTop: -c.defaultSize.height/2,
+				marginLeft: -c.defaultSize.width/2,
+				width: c.defaultSize.width,
+				height: c.defaultSize.height,
 				position: 'absolute',
 				top: '50%',
 				left: '50%'
@@ -76,19 +83,53 @@
 			
 			var img = new Image();
 			img.src = this.href;
-			img.width = img.width;
-			img.height = img.height;
 			
-			$container.animate({
-				width: img.width,
-				height: img.height
-			},{
-				duration: 400,
-				easing: 'swing'
+			// when img.width & img.height > 0
+			getImageTimer(img, function() {
+				$container.animate({
+					marginTop: -img.height/2,
+					marginLeft: -img.width/2,
+					width: img.width,
+					height: img.height
+				},{
+					duration: 400,
+					easing: 'swing',
+					complete: function() {
+						$image.append(img).fadeIn('normal', function() {
+							$(img).animate({
+								width: c.animateTo.width,
+								height: c.animateTo.height
+							},{
+								duration: 400,
+								easing: 'swing'
+							});
+							$container.animate({
+								marginTop: -c.animateTo.height/2,
+								marginLeft: -c.animateTo.width/2,
+								width: c.animateTo.width,
+								height: c.animateTo.height
+							},{
+								duration: 400,
+								easing: 'swing'
+							});
+						});
+					}
+				});
 			});
-			
+
 			return false;			
 		});
+	}
+	
+	function getImageTimer(img, callback) {
+		var gotten = false,
+			timer = setInterval(function() {
+				// width & height gotten
+				if ( img.width > 0 && img.height > 0 ) {
+					clearInterval(timer);
+					callback();
+				}
+			}, 10);
 	}
 
 })(jQuery)
