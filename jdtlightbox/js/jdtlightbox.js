@@ -22,19 +22,19 @@
 					width: 32,
 					height: 32
 				},*/
-				closeImgSrc: 'img/closeBox.png',
+				closeImgSrc: 'img/closebox.png',
 				bgLayerOpacity: .7
 			}, options),
 			$this = $(this),
 			dE = document.documentElement,
 			dEW = dE.clientWidth,
 			dEH = dE.clientHeight;
-			
+
 		$(window).resize(function() {
 			dEW = dE.clientWidth;
 			dEH = dE.clientHeight;
 		});
-		
+
 		if ( !$('#dtLightBoxLayer') || $('#dtLightBoxLayer').length<1 ) {
 			$('body').append([
 				'<div id="dtLightBoxLayer"/>',
@@ -44,7 +44,7 @@
 				'</div>'
 			].join(''));
 		}
-		
+
 		var $layer = $('#dtLightBoxLayer').hide(),
 			$container = $('#dtLightBoxContainer').hide(),
 			$close = $('#dtLightBoxClose').hide(),
@@ -54,7 +54,7 @@
 				$container.fadeOut();
 				$close.hide();
 			}
-			
+
 		$layer.css({
 			width: dEW+'px',
 			height: dEH+'px',
@@ -63,11 +63,11 @@
 			left: 0
 		}).click(closeDtLightBox);
 		$close.click(closeDtLightBox);
-			
+
 		$this.click(function() {
 			return false;
 		});
-			
+
 		$this.click(function() {
 			$layer.css('opacity', c.bgLayerOpacity).show();
 			$image.empty();
@@ -80,10 +80,10 @@
 				top: '50%',
 				left: '50%'
 			});
-			
+
 			var img = new Image();
 			img.src = this.href;
-			
+
 			// when img.width & img.height > 0
 			getImageTimer(img, function() {
 				var animateToSize = {
@@ -136,10 +136,10 @@
 				});
 			});
 
-			return false;			
+			return false;
 		});
 	}
-	
+
 	function getImageTimer(img, callback) {
 		var gotten = false,
 			timer = setInterval(function() {
