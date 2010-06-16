@@ -1,13 +1,13 @@
 /**
  * jDTTabs
  *
- * @Version      $Rev: 61 $
+ * @Version      $Rev$
  * @author       yusuke.nakanishi (http://yusukenakanishi.com/)
  * @copyright    (c) 2010 誰が使うの？何の役にも立たないjQueryプラグイン
  * @license      The MIT License
  * @link         http://jdtplugins.googlecode.com/svn/trunk/jDTGnoKyouhu/index.html
  *
- * $Date: 2010-06-15 16:01:55 +0900 (Tue, 15 Jun 2010) $
+ * $Date$
  */
  
 (function($) {
