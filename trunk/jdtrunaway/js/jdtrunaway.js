@@ -36,6 +36,13 @@
 			var offset = $(this).offset();
 			firstPointX[index] = offset.left;
 			firstPointY[index] = offset.top;
+			
+			$(this).after($('<span/>')
+				.css({
+					display: 'inline-block',
+					width: $(this).width()
+				})
+			);
 		});
 		
 		var $this = $(selector);
@@ -45,7 +52,7 @@
 				var elem = $(this),
 					offset = elem.offset(),
 					theta = Math.atan2(offset.top - mouseY, offset.left - mouseX),
-					d = 100 / Math.sqrt(Math.pow(mouseX - offset.left, 2) + Math.pow(mouseY - offset.top, 2)),
+					d = 500 / Math.sqrt(Math.pow(mouseX - offset.left, 2) + Math.pow(mouseY - offset.top, 2)),
 				
 				left = parseInt(elem.css("left")) + d * Math.cos(theta) + (firstPointX[index] - offset.left) * 0.1 + "px",
 				top = parseInt(elem.css("top")) + d * Math.sin(theta) + (firstPointY[index] - offset.top) * 0.1 + "px";
