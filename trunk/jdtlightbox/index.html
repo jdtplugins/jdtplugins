@@ -13,7 +13,13 @@
 	<script type="text/javascript" src="js/jdtlightbox.js"></script>
 	<script type="text/javascript">
 	jQuery(function($){
-		$('div.imgs a').jdtLightBox();
+		$('#sample1 a').jdtLightBox();
+		$('#sample2 a').jdtLightBox({
+			animateTo: {
+				width: 2000,
+				height: 2000
+			}
+		});
 	});
 	</script>
 </head>
@@ -24,7 +30,13 @@
 	<h1>jdtLightBox</h1>
 	<h2>え…うそ…</h2>
 	
-	<div class="imgs">
+	<div class="imgs" id="sample1">
+		<a href="img/4578678366_7c73f9f06d.jpg"><img src="img/4578678366_7c73f9f06d_thumb.jpg" alt="しゃしーん" /></a>
+		<a href="img/4578679098_a1907e7487.jpg"><img src="img/4578679098_a1907e7487_thumb.jpg" alt="しゃしーん2" /></a>
+		<a href="img/4578679504_d3159f0d2e.jpg"><img src="img/4578679504_d3159f0d2e_thumb.jpg" alt="しゃしーん3" /></a>
+	</div>
+	
+	<div class="imgs" id="sample2">
 		<a href="img/4578678366_7c73f9f06d.jpg"><img src="img/4578678366_7c73f9f06d_thumb.jpg" alt="しゃしーん" /></a>
 		<a href="img/4578679098_a1907e7487.jpg"><img src="img/4578679098_a1907e7487_thumb.jpg" alt="しゃしーん2" /></a>
 		<a href="img/4578679504_d3159f0d2e.jpg"><img src="img/4578679504_d3159f0d2e_thumb.jpg" alt="しゃしーん3" /></a>
