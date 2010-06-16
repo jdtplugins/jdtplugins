@@ -39,7 +39,7 @@
         // 画像の配置
         setup: function(){
             this.elem = $('<div class="GArea"><img src="img/cockroach.gif" alt="img_01" class="GImg" /><img src="img/mosaic.gif" alt="mosaic" class="GMosaicImg" /></div>');
-            $(document.body).append(this.elem);
+            $('body').append(this.elem);
             var self = this;
             self.firstPosition();
         },
@@ -161,7 +161,7 @@
         
         // GMenuの追加
         var addGMenu = $('<ul id="GMenu"><li><img src="img/menu_01.gif" alt="menu_01" id="GProduceButton" /></li><li><img src="img/menu_02.gif" alt="menu_02" id="GMosaicButton" /></li><li><img src="img/menu_03.gif" alt="menu_03" id="GDeleteButton" /></li></ul>');
-        $(document.body).append(addGMenu);
+        $('body').append(addGMenu);
         
         // 最初に1G表示
         GProduceFirst = new GProduce();
