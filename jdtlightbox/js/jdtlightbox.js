@@ -40,7 +40,7 @@
 				'<div id="dtLightBoxLayer"/>',
 				'<div id="dtLightBoxContainer">',
 					'<div id="dtLightBoxImage"/>',
-					'<img id="dtLightBoxClose" src=' + c.closeImgSrc + '/>',
+					'<img id="dtLightBoxClose" src="' + c.closeImgSrc + '" alt="Close" />',
 				'</div>'
 			].join(''));
 		}
