@@ -33,14 +33,17 @@
 			dEH = dE.clientHeight;
 		});
 		
-		$('body').append([
-			'<div id="dtLightBoxLayer"/>',
-			'<div id="dtLightBoxContainer">',
-				'<div id="dtLightBoxClose"/>',
-				'<div id="dtLightBoxImage"/>',
-			'</div>',
-			'<div id="getImageLayer"/>'
-		].join(''));
+		if ( $('#dtLightBoxLayer') && $('#dtLightBoxLayer').length>0 ) {
+		} else {
+			$('body').append([
+				'<div id="dtLightBoxLayer"/>',
+				'<div id="dtLightBoxContainer">',
+					'<div id="dtLightBoxClose"/>',
+					'<div id="dtLightBoxImage"/>',
+				'</div>',
+				'<div id="getImageLayer"/>'
+			].join(''));
+		}
 		
 		var $layer = $('#dtLightBoxLayer').hide(),
 			$container = $('#dtLightBoxContainer').hide(),
