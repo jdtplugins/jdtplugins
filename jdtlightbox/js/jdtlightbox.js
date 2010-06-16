@@ -17,10 +17,12 @@
 					width: 150,
 					height: 150
 				},
-				animateTo: {
+				animateTo: 20,
+				/*animateTo: {
 					width: 32,
 					height: 32
-				},
+				},*/
+				closeImgSrc: 'img/closeBox.png',
 				bgLayerOpacity: .7
 			}, options),
 			$this = $(this),
@@ -33,27 +35,25 @@
 			dEH = dE.clientHeight;
 		});
 		
-		if ( $('#dtLightBoxLayer') && $('#dtLightBoxLayer').length>0 ) {
-		} else {
+		if ( !$('#dtLightBoxLayer') || $('#dtLightBoxLayer').length<1 ) {
 			$('body').append([
 				'<div id="dtLightBoxLayer"/>',
 				'<div id="dtLightBoxContainer">',
-					'<div id="dtLightBoxClose"/>',
 					'<div id="dtLightBoxImage"/>',
-				'</div>',
-				'<div id="getImageLayer"/>'
+					'<img id="dtLightBoxClose" src=' + c.closeImgSrc + '/>',
+				'</div>'
 			].join(''));
 		}
 		
 		var $layer = $('#dtLightBoxLayer').hide(),
 			$container = $('#dtLightBoxContainer').hide(),
-			$close = $('#dtLightBoxClose'),
+			$close = $('#dtLightBoxClose').hide(),
 			$image = $('#dtLightBoxImage').hide(),
-			$imageLayer = $('#getImageLayer').css({
-				height: 1,
-				width: 1,
-				overflow: 'hidden'
-			});
+			closeDtLightBox = function() {
+				$layer.fadeOut();
+				$container.fadeOut();
+				$close.hide();
+			}
 			
 		$layer.css({
 			width: dEW+'px',
@@ -61,12 +61,8 @@
 			position: 'fixed',
 			top: 0,
 			left: 0
-			/*marginTop: -document.documentElement.clientHeight/2,
-			marginLeft: -document.documentElement.clientWidth/2,
-			position: 'absolute',
-			top: '50%',
-			left: '50%'*/
-		});
+		}).click(closeDtLightBox);
+		$close.click(closeDtLightBox);
 			
 		$this.click(function() {
 			return false;
@@ -74,6 +70,7 @@
 			
 		$this.click(function() {
 			$layer.css('opacity', c.bgLayerOpacity).show();
+			$image.empty();
 			$container.show().css({
 				marginTop: -c.defaultSize.height/2,
 				marginLeft: -c.defaultSize.width/2,
@@ -89,6 +86,15 @@
 			
 			// when img.width & img.height > 0
 			getImageTimer(img, function() {
+				var animateToSize = {
+						width: img.width * c.animateTo/100,
+						height: img.height * c.animateTo/100
+					}/*,
+					closeAnimateToSize = {
+						width: parseInt($close.width()) * c.animateTo/100,
+						height: parseInt($close.height()) * c.animateTo/100
+					}
+					console.log(closeAnimateToSize.width);*/
 				$container.animate({
 					marginTop: -img.height/2,
 					marginLeft: -img.width/2,
@@ -98,19 +104,29 @@
 					duration: 400,
 					easing: 'swing',
 					complete: function() {
+						$close.fadeIn();
 						$image.append(img).fadeIn('normal', function() {
+							/*$close.animate({
+								marginTop: -closeAnimateToSize.height/2,
+								marginLeft: -closeAnimateToSize.width/2,
+								width: closeAnimateToSize.width,
+								height: closeAnimateToSize.height
+							},{
+								duration: 400,
+								easing: 'swing'
+							});*/
 							$(img).animate({
-								width: c.animateTo.width,
-								height: c.animateTo.height
+								width: animateToSize.width,
+								height: animateToSize.height
 							},{
 								duration: 400,
 								easing: 'swing'
 							});
 							$container.animate({
-								marginTop: -c.animateTo.height/2,
-								marginLeft: -c.animateTo.width/2,
-								width: c.animateTo.width,
-								height: c.animateTo.height
+								marginTop: -animateToSize.height/2,
+								marginLeft: -animateToSize.width/2,
+								width: animateToSize.width,
+								height: animateToSize.height
 							},{
 								duration: 400,
 								easing: 'swing'
