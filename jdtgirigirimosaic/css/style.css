@@ -93,24 +93,13 @@ h2 {
 	font-size: 116%;
 }
 
-div.imgs {
+div.photos {
 	padding-top: 1em;
 }
 
-	div.imgs a img {
-		border: solid #ccc 1px;
+	div.photos img {
+		margin-bottom: .5em;
 	}
-	div.imgs a:hover img {
-		border: solid #000 1px;
-	}
-	
-blockquote {
-	padding-top: 1em;
-}
-
-p.link {
-	padding-top: 1em;
-}
     
 p.copy {
 	margin-top: 1em;

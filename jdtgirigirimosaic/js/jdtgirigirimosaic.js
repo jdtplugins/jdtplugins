@@ -11,7 +11,7 @@
  */
 (function($) {
 
-	$.fn.jdtGirigirimosaic = function(options) {
+	$.fn.jdtGirigiriMosaic = function(options) {
 		
 		var c = $.extend({
 				size: 5
@@ -19,44 +19,43 @@
 			$this = $(this);
 			
 		$this.each(function() {
-			giriMosa(this);
+			giriMosa(this, c);
 		});
 	}
 	
-	function mosaic(target) {
-		var canvas = $('<canvas/>');
-		canvas.attr({
-			width: target.width(),
-			height: target.height()
-		});
+	function giriMosa(target, c) {
+		var canvas = document.createElement('canvas'),
+			$this = $(target),
+			size = {
+				width: $this.width(),
+				height: $this.height()
+			},
+			context = canvas.getContext('2d');
+			
+		canvas.width = size.width;
+		canvas.height = size.height;
+		context.drawImage(target, 0, 0);
 		
+		$('body').append(canvas);
 		
-		
-		
-	    var img = document.getElementById("img");
-	    var canvas = document.getElementById("canvas");
-	    var imgWidth = canvas.width = img.width;
-	    var imgHeight = canvas.height = img.height;
-	    var context = canvas.getContext("2d");
-	    context.drawImage(img, 0, 0);
-	    
-	    var index = document.forms[0].mosaicSize.selectedIndex;
-	    var size = new Number( document.forms[0].mosaicSize.options[index].value );
-	    
-	    for(var y = 0; y < imgHeight; y += size){
-	        var h = (size <= imgHeight - y) ? size : imgHeight - y;
+	    for ( var y = 0; y < size.height; y += c.size ) {
+	        var h = (c.size <= size.height - y) ? c.size : size.height - y;
 	        
-	        for(var x = 0; x < imgWidth; x += size){
-	            var w = (size <= imgWidth - x) ? size : imgWidth - x;
+	        for ( var x = 0; x < size.width; x += c.size ) {
+	            var w = (c.size <= size.width - x) ? c.size : size.width - x;
 	            
 	            var r = 0;
 	            var g = 0;
 	            var b = 0;
 
-	            var data = context.getImageData(x,y,w,h).data;
+				console.log(x + '\n' + y + '\n' + w + '\n' + h);
+				console.log(context);
+	            var data = context.getImageData(x, y, w, h).data;
 	            var dataLength = data.length;
 	            
-	            for(var pixelIndex = 0; pixelIndex < dataLength; pixelIndex += 4) {
+	            console.log(data + '\n' + dataLength)
+	            
+	            for ( var pixelIndex = 0; pixelIndex < dataLength; pixelIndex += 4 ) {
 	                r += data[pixelIndex];
 	                g += data[pixelIndex + 1];
 	                b += data[pixelIndex + 2];
@@ -68,11 +67,12 @@
 	            g = Math.floor(g / pixelCount);
 	            b = Math.floor(b / pixelCount);
 	            
-	            context.clearRect(x,y,w,h);
+	            context.clearRect(x, y, w, h);
 	            context.fillStyle = 'rgb(' + r + ',' + g + ',' + b + ')';
-	            context.fillRect(x,y,w,h);
+	            context.fillRect(x, y, w, h);
 	       }
 	    }
+	    
 	}
 	
 	function getImageTimer(img, callback) {
