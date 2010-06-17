@@ -11,26 +11,31 @@
  */
 (function($) {
 
-	var mouseX, mouseY;
+	var mouseX, mouseY, dE = document.documentElement;
 
 	$.fn.jdtRunAway = function(options) {
 		
+		var c = $.extend({
+			rate: 60,
+			instance: 1000
+		}, options);
+		
 		$(document)
 			.mousemove(function(e) {
-				mouseY = e.pageY;
-				mouseX = e.pageX;
+				mouseY = e.pageY ? e.pageY : event.clientY + dE.scrollTop;
+				mouseX = e.pageX ? e.pageX : event.clientX + dE.scrollLeft;
 			});
 			
 		$(this).each(function() {
-			mover(this);
+			mover(this, c.instance, c.rate);
 		});
 			
 	}
 	
-	function mover(selector) {
+	function mover(selector, instance, rate) {
 		var firstPointX = [],
 			firstPointY = [];
-
+			
 		// offsetの保存
 		$(selector).each(function(index) {
 			var offset = $(this).offset();
@@ -47,24 +52,26 @@
 		
 		var $this = $(selector);
 
-		(function() {
+		(function(){
 			$this.each(function(index) {
 				var elem = $(this),
 					offset = elem.offset(),
 					theta = Math.atan2(offset.top - mouseY, offset.left - mouseX),
-					d = 500 / Math.sqrt(Math.pow(mouseX - offset.left, 2) + Math.pow(mouseY - offset.top, 2)),
-				
-				left = parseInt(elem.css("left")) + d * Math.cos(theta) + (firstPointX[index] - offset.left) * 0.1 + "px",
-				top = parseInt(elem.css("top")) + d * Math.sin(theta) + (firstPointY[index] - offset.top) * 0.1 + "px";
-
-				elem.css({
-					position: 'absolute',
-					left: left,
-					top: top
-				});
+					d = instance / Math.sqrt(Math.pow(mouseX - offset.left, 2) + Math.pow(mouseY - offset.top, 2)),
+					left = parseInt(offset.left) + d * Math.cos(theta) + (firstPointX[index] - offset.left) * 0.1,
+					top = parseInt(offset.top) + d * Math.sin(theta) + (firstPointY[index] - offset.top) * 0.1;
+					
+				if ( !isNaN(top) && !isNaN(left) ) {
+					elem.css({
+						left: left,
+						top: top
+					});
+				} else {
+					elem.css('position', 'absolute');
+				}
 			});
 			
-			setTimeout(arguments.callee, 60);
+			setTimeout(arguments.callee, rate);
 		})();
 	}
 				
