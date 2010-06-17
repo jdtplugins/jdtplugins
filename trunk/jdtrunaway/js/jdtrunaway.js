@@ -28,6 +28,7 @@
 			.keydown(function(e) {
 				if ( e.keyCode == 9 ) {
 					alert('ひきょうもの！');
+					return false;
 				}
 			});
 			
