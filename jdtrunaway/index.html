@@ -5,15 +5,14 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta http-equiv="Content-Style-Type" content="text/css" />
 	<meta http-equiv="Content-Script-Type" content="text/javascript" />
-	<title>これからの新標準Lightbox jDTLightBox</title>
+	<title>クリックさせないリンク jdtRunAway.js</title>
 	<link rel="stylesheet" type="text/css" href="css/style.css" />
-	<link rel="stylesheet" type="text/css" href="css/dtlightbox.css" />
 	<script type="text/javascript" src="http://www.google.com/jsapi"></script>
-	<script type="text/javascript">google.load("jquery", '1.4');</script>
+	<script type="text/javascript">google.load("jquery", '1.4.2');</script>
 	<script type="text/javascript" src="js/jdtrunaway.js"></script>
 	<script type="text/javascript">
 	jQuery(function($){
-		$('a').jdtRunAway();
+		$('p#sample a').jdtRunAway();
 	});
 	</script>
 </head>
@@ -21,10 +20,13 @@
 <body>
 <p class="note"><a href="http://5509.me/">5509</a></p>
 <div class="pagebody">
-	<h1>jdtLightBox</h1>
-	<h2>え…うそ…</h2>
+	<h1>jdtRunAway</h1>
+	<h2>つかまえてごらーん</h2>
 	
-	<p><b>ボーリンググリーン</b>（<a title="英語" href="/wiki/%E8%8B%B1%E8%AA%9E">英</a>: <span lang="en" xml:lang="en">Bowling Green</span>）は、<a title="アメリカ合衆国" href="/wiki/%E3%82%A2%E3%83%A1%E3%83%AA%E3%82%AB%E5%90%88%E8%A1%86%E5%9B%BD">アメリカ合衆国</a><a title="ケンタッキー州" href="/wiki/%E3%82%B1%E3%83%B3%E3%82%BF%E3%83%83%E3%82%AD%E3%83%BC%E5%B7%9E">ケンタッキー州</a>第4の都市であり<sup class="reference" id="cite_ref-0"><a href="#cite_note-0">[1]</a></sup>、<a title="ウォーレン郡 (ケンタッキー州) (未作成ページ)" class="new" href="/w/index.php?title=%E3%82%A6%E3%82%A9%E3%83%BC%E3%83%AC%E3%83%B3%E9%83%A1_(%E3%82%B1%E3%83%B3%E3%82%BF%E3%83%83%E3%82%AD%E3%83%BC%E5%B7%9E)&amp;action=edit&amp;redlink=1">ウォーレン郡</a>の<a title="郡庁所在地" href="/wiki/%E9%83%A1%E5%BA%81%E6%89%80%E5%9C%A8%E5%9C%B0">郡庁所在地</a>である。2008年の人口は55,097人と推計されている。ボーリンググリーン都市圏の主要市であり、都市圏人口は2009年時点で120,595人である<sup class="reference" id="cite_ref-1"><a href="#cite_note-1">[2]</a></sup>。ボーリンググリーンの町はロバート・ムーアとジョージ・ムーアがウォーレン郡に30ないし40エーカー (0.12 - 0.16 km<sup>2</sup>) の土地を寄付した後の1798年に設立された。この土地は公共建築物を建てるために寄付されていた2エーカー (8,000 m<sup>2</sup>) の区画を囲んでいた。ボーリンググリーンは<a title="南北戦争" href="/wiki/%E5%8D%97%E5%8C%97%E6%88%A6%E4%BA%89">南北戦争</a>の間に<a title="アメリカ連合国" href="/wiki/%E3%82%A2%E3%83%A1%E3%83%AA%E3%82%AB%E9%80%A3%E5%90%88%E5%9B%BD">アメリカ連合国</a>ケンタッキー州の暫定州都になった。2003年、ボーリンググリーンと周辺の地域社会が都市圏に指定された。</p>
+	<blockquote>
+		<p id="sample"><b>ボーリンググリーン</b>（<a title="英語" href="http://ja.wikipedia.org/wiki/%E8%8B%B1%E8%AA%9E">英</a>: <span lang="en" xml:lang="en">Bowling Green</span>）は、<a title="アメリカ合衆国" href="http://ja.wikipedia.org/wiki/%E3%82%A2%E3%83%A1%E3%83%AA%E3%82%AB%E5%90%88%E8%A1%86%E5%9B%BD">アメリカ合衆国</a><a title="ケンタッキー州" href="http://ja.wikipedia.org/wiki/%E3%82%B1%E3%83%B3%E3%82%BF%E3%83%83%E3%82%AD%E3%83%BC%E5%B7%9E">ケンタッキー州</a>第4の都市であり<sup class="reference" id="cite_ref-0"><a href="#cite_note-0">[1]</a></sup>、<a title="ウォーレン郡 (ケンタッキー州) (未作成ページ)" class="new" href="http://ja.wikipedia.org/w/index.php?title=%E3%82%A6%E3%82%A9%E3%83%BC%E3%83%AC%E3%83%B3%E9%83%A1_(%E3%82%B1%E3%83%B3%E3%82%BF%E3%83%83%E3%82%AD%E3%83%BC%E5%B7%9E)&amp;action=edit&amp;redlink=1">ウォーレン郡</a>の<a title="郡庁所在地" href="http://ja.wikipedia.org/wiki/%E9%83%A1%E5%BA%81%E6%89%80%E5%9C%A8%E5%9C%B0">郡庁所在地</a>である。2008年の人口は55,097人と推計されている。ボーリンググリーン都市圏の主要市であり、都市圏人口は2009年時点で120,595人である<sup class="reference" id="cite_ref-1"><a href="#cite_note-1">[2]</a></sup>。ボーリンググリーンの町はロバート・ムーアとジョージ・ムーアがウォーレン郡に30ないし40エーカー (0.12 - 0.16 km<sup>2</sup>) の土地を寄付した後の1798年に設立された。この土地は公共建築物を建てるために寄付されていた2エーカー (8,000 m<sup>2</sup>) の区画を囲んでいた。ボーリンググリーンは<a title="南北戦争" href="http://ja.wikipedia.org/wiki/%E5%8D%97%E5%8C%97%E6%88%A6%E4%BA%89">南北戦争</a>の間に<a title="アメリカ連合国" href="http://ja.wikipedia.org/wiki/%E3%82%A2%E3%83%A1%E3%83%AA%E3%82%AB%E9%80%A3%E5%90%88%E5%9B%BD">アメリカ連合国</a>ケンタッキー州の暫定州都になった。2003年、ボーリンググリーンと周辺の地域社会が都市圏に指定された。</p>
+		<p class="link"><a href="http://bit.ly/d0hJQ7">ボーリンググリーン Wikipedia</a></p>
+	</blockquote>
 
 
 </body>

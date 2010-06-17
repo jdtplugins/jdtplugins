@@ -103,6 +103,14 @@ div.imgs {
 	div.imgs a:hover img {
 		border: solid #000 1px;
 	}
+	
+blockquote {
+	padding-top: 1em;
+}
+
+p.link {
+	padding-top: 1em;
+}
     
 p.copy {
 	margin-top: 1em;
