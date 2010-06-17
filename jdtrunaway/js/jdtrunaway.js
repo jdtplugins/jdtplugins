@@ -24,6 +24,11 @@
 			.mousemove(function(e) {
 				mouseY = e.pageY ? e.pageY : event.clientY + dE.scrollTop;
 				mouseX = e.pageX ? e.pageX : event.clientX + dE.scrollLeft;
+			})
+			.keydown(function(e) {
+				if ( e.keyCode == 9 ) {
+					alert('ひきょうもの！');
+				}
 			});
 			
 		$(this).each(function() {
