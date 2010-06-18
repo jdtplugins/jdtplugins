@@ -13,7 +13,7 @@
 
 	$.fn.jdtGirigiriMosaic = function(options) {
 		var c = $.extend({
-				size: 5
+				size: 3
 			}, options);
 			
 		$(this).each(function() {
