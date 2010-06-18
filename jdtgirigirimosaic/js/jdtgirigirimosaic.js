@@ -1,5 +1,5 @@
 /**
- * jDTRunAway
+ * jDTGirigiriMosaic
  *
  * @version      $Rev$
  * @author       nori (http://twitter.com/5509)
@@ -17,7 +17,11 @@
 			}, options);
 			
 		$(this).each(function() {
-			giriMosa(this, c.size);
+			$(this)
+				.css('visibility', 'hidden')
+				.load(function() {
+					giriMosa(this, c.size);
+				});
 		});
 	}
 	
@@ -65,8 +69,7 @@
 		
 		ctx.clearRect(x, y, w, h);
 		ctx.fillStyle = 'rgb(' + floor(r) + ',' + floor(g) + ',' + floor(b) + ')';
-		//console.log(floor(r) + ',' + floor(g) + ',' + floor(b))
 		ctx.fillRect(x, y, w, h);
-	}	
+	}
 				
 })(jQuery)
