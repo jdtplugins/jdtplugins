@@ -12,77 +12,61 @@
 (function($) {
 
 	$.fn.jdtGirigiriMosaic = function(options) {
-		
 		var c = $.extend({
 				size: 5
-			}, options),
-			$this = $(this);
+			}, options);
 			
-		$this.each(function() {
-			giriMosa(this, c);
+		$(this).each(function() {
+			giriMosa(this, c.size);
 		});
 	}
 	
-	function giriMosa(target, c) {
-		var canvas = document.createElement('canvas'),
-			$this = $(target),
-			size = {
-				width: $this.width(),
-				height: $this.height()
+	function giriMosa(t, ms) {
+		var cvs = document.createElement('canvas'),
+			$this = $(t),
+			s = {
+				w: $this.width(),
+				h: $this.height()
 			},
-			context = canvas.getContext('2d');
+			ctx = cvs.getContext('2d');
 			
-		canvas.width = size.width;
-		canvas.height = size.height;
-		context.drawImage(target, 0, 0);
+		cvs.width = s.w;
+		cvs.height = s.h;
+		ctx.drawImage(t, 0, 0);
 		
-		$('body').append(canvas);
+		$this.replaceWith(cvs);
 		
-	    for ( var y = 0; y < size.height; y += c.size ) {
-	        var h = (c.size <= size.height - y) ? c.size : size.height - y;
+	    for ( var y = 0; y < s.h; y += ms ) {
+	        var h = ms <= s.h - y
+	        	? ms : s.h - y;
 	        
-	        for ( var x = 0; x < size.width; x += c.size ) {
-	            var w = (c.size <= size.width - x) ? c.size : size.width - x;
+	        for ( var x = 0; x < s.w; x += ms ) {
+	            var w = ms <= s.w - x
+	            	? ms : s.w - x;
 	            
-	            var r = 0;
-	            var g = 0;
-	            var b = 0;
-
-				console.log(x + '\n' + y + '\n' + w + '\n' + h);
-				console.log(context);
-	            var data = context.getImageData(x, y, w, h).data;
-	            var dataLength = data.length;
+	            applyRGBReplace(ctx, x, y, w, h);
 	            
-	            console.log(data + '\n' + dataLength)
-	            
-	            for ( var pixelIndex = 0; pixelIndex < dataLength; pixelIndex += 4 ) {
-	                r += data[pixelIndex];
-	                g += data[pixelIndex + 1];
-	                b += data[pixelIndex + 2];
-	            }
-	            
-	            var pixelCount = dataLength / 4;
-	            
-	            r = Math.floor(r / pixelCount);
-	            g = Math.floor(g / pixelCount);
-	            b = Math.floor(b / pixelCount);
-	            
-	            context.clearRect(x, y, w, h);
-	            context.fillStyle = 'rgb(' + r + ',' + g + ',' + b + ')';
-	            context.fillRect(x, y, w, h);
 	       }
 	    }
-	    
 	}
 	
-	function getImageTimer(img, callback) {
-		var timer = setInterval(function() {
-				// width & height gotten
-				if ( img.width > 0 && img.height > 0 ) {
-					clearInterval(timer);
-					callback();
-				}
-			}, 10);
-	}
+	function applyRGBReplace(ctx, x, y, w, h) {
+		var r = g = b = 0,
+			D = ctx.getImageData(x, y, w, h).data,
+			floor = function(rgb) {
+				return Math.floor(rgb / ( D.length / 4 ) );
+			};
+					
+		for ( var px = 0; px < D.length; px += 4 ) {
+		    r = r + D[px];
+		    g = g + D[px + 1];
+		    b = b + D[px + 2];
+		}
+		
+		ctx.clearRect(x, y, w, h);
+		ctx.fillStyle = 'rgb(' + floor(r) + ',' + floor(g) + ',' + floor(b) + ')';
+		//console.log(floor(r) + ',' + floor(g) + ',' + floor(b))
+		ctx.fillRect(x, y, w, h);
+	}	
 				
 })(jQuery)
