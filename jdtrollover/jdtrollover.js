@@ -18,6 +18,8 @@
 
 		var messages = {
 			end: '\u672c\u65e5\u306e\u55b6\u696d\u306f\u7d42\u4e86\u3057\u307e\u3057\u305f',
+			oh : '\u30aa\u30d0\u5b50\u300c\u79c1\u3068\u306f\u904a\u3073\u3060'
+			   + '\u3063\u305f\u306e\u306d\uff01\u30d2\u30c9\u30a4\uff01\u300d',
 			0  : '\u52e2\u3044\u306e\u3042\u308b\u30ed\u30fc\u30eb\u30aa'
 			   + '\u30fc\u30d0\u30fc\u306f\u7f8e\u3057\u3044\uff01',
 			100: '\u3053\u3053\u3092\u30af\u30ea\u30c3\u30af\uff01',
@@ -90,6 +92,9 @@
 				balloon.stop(true, true).fadeOut(500);
 				time = 0;
 				fatigue++;
+				if (fatigue === 3) {
+					alert(messages['oh']);
+				}
 			});
 		});
 	}
