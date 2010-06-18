@@ -12,6 +12,8 @@
  */
 (function($) {
 
+	// Spaghetti :D
+
 	$.fn.rollover = $.fn.jdtRollover = function(suffix, ikioi) {
 		suffix = suffix || '_on';
 		ikioi = ikioi || 1;
@@ -25,10 +27,10 @@
 			100: '\u3053\u3053\u3092\u30af\u30ea\u30c3\u30af\uff01',
 			150: '\u305d\u308d\u305d\u308d\u30af\u30ea\u30c3\u30af\u3057\u305f'
 			   + '\u65b9\u304c\u826f\u3044\u3068\u601d\u3046\u3088\uff01',
-			190: '\u3053\u3053\u3092\u30af\u30ea\u30c3\u30af\uff01',
-			220: '\u3046\u304a\u304a\u304a\u304a\u3049\u3049\u3049\u304a\u304a\u304a'
+			180: '\u3053\u3053\u3092\u30af\u30ea\u30c3\u30af\uff01',
+			210: '\u3046\u304a\u304a\u304a\u304a\u3049\u3049\u3049\u304a\u304a\u304a'
 			   + '\u3063\u3063\u3063\u3063\u3049\u304a\uff01\uff01\uff01\uff01',
-			230: '\u307a\u3063\u305f\u3093'
+			220: '\u307a\u3063\u305f\u3093'
 		};
 
 		var balloon = $('<div/>', {
@@ -73,7 +75,7 @@
 					});
 				}
 
-				if (time >= 230) {
+				if (time >= 220) {
 					clearTimeout(queue);
 					return fatigue = 3;
 				}
