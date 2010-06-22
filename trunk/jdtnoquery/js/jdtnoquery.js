@@ -12,5 +12,5 @@
 (function($) {
 
 	$ = jQuery = null;
-	
+
 })(jQuery)
