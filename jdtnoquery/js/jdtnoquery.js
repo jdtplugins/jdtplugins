@@ -9,8 +9,4 @@
  *
  * $Date$
  */
-(function($) {
-
-	$ = jQuery = null;
-
-})(jQuery)
+$ = jQuery = null;
