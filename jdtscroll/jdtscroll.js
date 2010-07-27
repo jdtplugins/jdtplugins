@@ -38,8 +38,10 @@
 			'easeOutBack', 'easeInBounce', 'easeOutBounce'
 		];
 
-		var target = $('html, body'), isMuri, muriPx,
-		    fatigue = 0, uzasaMax = easing.length - 1;
+		var target = $.browser.opera
+		           ? $(document.compatMode === 'BackCompat' ? 'body' : 'html')
+		           : $('html, body');
+		var isMuri, muriPx, fatigue = 0, uzasaMax = easing.length - 1;
 
 		return this.each(function() {
 			var self = $(this), targetTop = null;
