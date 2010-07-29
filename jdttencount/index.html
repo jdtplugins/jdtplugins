@@ -2,28 +2,63 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
 <head>
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-	<meta http-equiv="Content-Style-Type" content="text/css" />
-	<meta http-equiv="Content-Script-Type" content="text/javascript" />
-	<title>10カウントしたら閉じちゃうんだぞー jdtTenCount.js</title>
-	<link rel="stylesheet" type="text/css" href="css/import.css" />
-	<script type="text/javascript" src="http://www.google.com/jsapi"></script>
-	<script type="text/javascript">google.load("jquery", '1.4.2');</script>
-	<script type="text/javascript" src="js/jdttencount.js"></script>
-	<script type="text/javascript">
-	jQuery(function($)
-	{
-		$("#tencount").jdtTenCount();
-	});
-	</script>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="Content-Style-Type" content="text/css" />
+    <meta http-equiv="Content-Script-Type" content="text/javascript" />
+    <title>10秒数えたら閉じちゃうんだぞー jdtTenCount.js</title>
+    <link rel="stylesheet" type="text/css" href="css/sytle.css" />
+    <script type="text/javascript" src="http://www.google.com/jsapi"></script>
+    <script type="text/javascript">google.load("jquery", '1.4.2');</script>
+    <script type="text/javascript" src="js/jdttencount.js"></script>
+    <script type="text/javascript">
+    jQuery(function($)
+    {
+        $("#tencount").jdtTenCount();
+    });
+    </script>
 </head>
 
 <body>
-<div id="overlay">
-  <p class="count"></p>
-</div>
-
 <div id="tencount">
+  <p>今回は子供の時によく見た黒板消しについて調べてみようと思う。</p>
+<p>以下、Wikipediaより引用</p>
+  <blockquote>
+  <h2>黒板消し</h2>
+  <p>黒板消し（こくばんけし）は、黒板にチョークで書かれた字や絵を消すための道具。ラーフル、黒板拭きとも呼ばれる。</p>
+ <h2>形状</h2>
+ <ul>
+<li>一般的な黒板消しは直方体の形状を持っている。表側と裏側で材質が違い、表は合成樹脂又は木の板、革などで裏はコーデュロイなどの布である。表の部分を持って裏の布の部分で黒板を拭く。<br />
+  持つ部分には把手よりもむしろベルトのようなもの（バンドという）がついているのが通例である。 </li><li>
+裏の布の中にはスポンジが入っており柔軟性がある。これにより多少黒板がへこんでいても対応できる。 
+</li><li>
+基本的には文庫本の横巾を少し短くしたくらいの大きさであるが、いっぺんに広い領域を消せるよう長辺がより長くなっているものや、手軽に持ち歩けるよう手のひらに入るほど小柄なものまでたくさん種類がある。 
+</li><li>
+黒板消しは黒板の桟に収納されることが多いため、大体のものは幅を桟の幅と同じくらいにしてある。 
+</li>
+</ul>
+ <h2>使い方</h2>
+<p>使用方法はいたって簡単であり、チョークで書かれた場所の上をなぞるだけでよいが、より黒板をきれいにするためには、黒板の全域を、そこにものが書いてあるかないかにかかわらず縦方向なら縦方向、横方向なら横方向になぞっていくのがよい。<br />
+  黒板消し自体にチョークの粉が付着しすぎてしまうと、却ってその粉が黒板につき黒板が汚なく見えてしまうことがあり、黒板を拭く前に黒板消しをまずきれいにしておく必要性がある。<br />
+  黒板消しからチョークの粉を取り除ききれいにするには、黒板消しを掃除するための機械（クリーナー）を使う方法がある。<br />
+  そういったものがない場合は窓の外などで黒板消しを2つ手にして叩き合わせる光景も見られたが、この方法は粉が舞うのでできるだけ避けるべきである。</p>
+ <h2>悪戯の道具</h2>
+<p>叩くと白い粉がでる事からしばしば悪戯の道具にも使用された。<br />
+  教室の入り口のドアの上部に黒板消しを挟み、ドアを開けた者の頭の上に黒板消しが落ちる仕組みである。<br />
+  現代では行う者が少なくなった古典的な悪戯でもある。<br />
+  ただしドアの構造上、悪戯の対象者の頭に落ちることはほぼありえず、基本的に手を汚す程度である。</p>
+  <hr />
+   <h2>その他</h2>
+ <ul>
+<li>ホワイトボードに書かれた文字を消す器具は「ホワイトボード消し」とはあまり言わず、「イレーサー」と呼ぶことが多い。<br />
+但し、黒板消しになぞらえて「白板消し」という表現をまれに年配の人が使うことはある。 
+</li></ul>
+</blockquote>
+</div>
+<!-- overlay -->
+<div id="overlay">
+</div>
+<div id="count_info">
+  <div class="inner">&nbsp;</div>
 </div>
 </body>
 </html>

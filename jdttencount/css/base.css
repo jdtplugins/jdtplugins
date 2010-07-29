@@ -1,11 +1,78 @@
 body
 {
-	font-family:"‚l‚r ‚oƒSƒVƒbƒN", "MS UI Gothic", Osaka, "ƒqƒ‰ƒMƒmŠpƒS Pro W3";
-	font-size: 93%;
-	text-align: center;
+    font-family:"‚l‚r ‚oƒSƒVƒbƒN", "MS UI Gothic", Osaka, "ƒqƒ‰ƒMƒmŠpƒS Pro W3";
+    font-size: 93%;
+    text-align: center;
+    background-color: #CAE4FF;
 }
 
 a:link { COLOR: #000000; }
 a:visited { COLOR: #000000; }
 a:hover { COLOR: #ff00ff; }
 a:active { COLOR: #000000; }
+
+html * {
+    margin: 0;
+    padding: 0;
+}
+.clearfix:after {
+    content: "."; 
+    display: block; 
+    height: 0; 
+    clear: both; 
+    visibility: hidden;
+}
+.clearfix {display: inline-table;}
+/* Hides from IE-mac \*/
+* html .clearfix {height: 1%;}
+.clearfix {display: block;}
+/* End hide from IE-mac */
+blockquote
+{
+    background-color: #CCC;
+    border-top-style: solid;
+    border-right-style: solid;
+    border-bottom-style: solid;
+    border-left-style: solid;
+    border-top-color: #999;
+    border-right-color: #999;
+    border-bottom-color: #999;
+    border-left-color: #999;
+    padding-top: 5px;
+    padding-right: 15px;
+    padding-bottom: 5px;
+    padding-left: 15px;
+}
+blockquote ul
+{
+    margin-left: 20px;
+    margin-top: 20px;
+    margin-right: 20px;
+    margin-bottom: 20px;
+}
+blockquote ul li
+{
+    list-style-type: disc;
+    text-indent: -1em;
+    margin-left: 20px;
+}
+
+blockquote>h2
+{
+    line-height: 200%;
+    font-size: 18px;
+    border-left-width: 5px;
+    border-left-style: solid;
+    border-left-color: #C36;
+    padding-left: 15px;
+    
+}
+blockquote>p
+{
+    padding: 10px;
+    
+}
+hr{
+    margin-top: 10px;
+    margin-bottom: 20px;
+}

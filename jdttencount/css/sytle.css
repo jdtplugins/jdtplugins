@@ -1,0 +1,46 @@
+@charset "utf-8";
+
+@import url("reset.css");
+@import url("base.css");
+
+
+#tencount
+{
+	margin-right: auto;
+	margin-left: auto;
+	width: 780px;
+	border: 5px solid #2F97FF;
+	background-color: #FFF;
+	text-align: left;
+	padding: 20px;
+
+}
+#overlay  /* jsとID名同期 */
+{
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: #000;
+    z-index: 9999;
+    filter: alpha(opacity=0);
+    -moz-opacity: 0;
+    opacity: 0;
+    display: none;
+}
+
+#count_info /* jsとID名同期 */
+{    display: none;
+    z-index: 10000;
+    position: absolute;
+    background: #fff;
+    width: 960px;
+}
+
+.inner /* jsとID名同期 */
+{
+	border: 6px solid #a55;
+	padding: 10px;	
+	font-family: Helvetica;
+	font-size: 40px;
+	color: #FF0000;
+}
