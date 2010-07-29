@@ -36,7 +36,7 @@
     width: 960px;
 }
 
-.inner /* jsとID名同期 */
+.inner /* jsとクラス名同期 */
 {
 	border: 6px solid #a55;
 	padding: 10px;	
