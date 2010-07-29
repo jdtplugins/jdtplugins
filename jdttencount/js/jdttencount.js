@@ -1,3 +1,14 @@
+/**
+ * jDTTenCount
+ *
+ * @version      $Rev$
+ * @author       kamiyam (http://twitter.com/kamiyam)
+ * @copyright    (c) 2010 誰が使うの？何の役にも立たないjQueryプラグイン
+ * @license      The MIT License
+ * @link         http://jdtplugins.googlecode.com/svn/trunk/jdttencount/index.html
+ *
+ * $Date$
+ */
 (function($) 
 {
     //カウントダウン更新スパン
