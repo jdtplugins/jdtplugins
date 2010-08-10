@@ -11,7 +11,10 @@
 	<script type="text/javascript">
 	jQuery(function($)
 	{
-		$("p#sample a").jdtLinkDouleClick();
+		$("a").jdtLinkDouleClick(
+							{
+		  						isAnimate: true,
+							});
 	});
 	</script>
 <!--[if lt IE 9]>
@@ -28,17 +31,24 @@
     <h2>&nbsp; </h2>
       <section>
 		<h3>sanple1</h3>
-		<p id="sample">いまはわけあって<a href="http://google.co.jp">このリンク</a>と<a href="http://yahoo.co.jp">このリンク</a>は二回押さんと使えませんねん。</p>
+		<p>TwitterのTLを見ているといろんなサイトを教得てもらうわけですよ。例えば<a href="http://google.co.jp">ここ</a>とか<a href="http://yahoo.co.jp">こことかね</a>ぼくはもう開き(ry</p>
 	  </section>
       <hr />
 	  <section>
     	<h3>sanple2</h3>
-   		<p>この<a href="http://google.co.jp">リンク</a>とこの<a href="http://yahoo.co.jp">リンク</a>は普通に使えるんですわ。</p>
+   		<p>あと、<a href="http://google.co.jp">ここ</a>とか<a href="http://yahoo.co.jp">ここ</a>とかは普通じゃ無いよね。</p>
 		</section>
 <!-- end .content --></div>
 <footer>
   <p style="text-align:right;"><a href="http://prog.re-d.net">kamiyam</a></p>
 <!-- end footer --></footer>
 <!-- end .container --></div>
+
+<!-- overlay -->
+<div id="overlay">
+</div>
+<div id="overlay_surface">
+  <div class="overlay_inner">&nbsp;</div>
+</div>
 </body>
 </html>
