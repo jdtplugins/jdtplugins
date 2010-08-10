@@ -88,7 +88,7 @@
 								);
 						
 			///文字ストリーミング
-			stringStreaming( $( inner ), msgs, 0, 2500 );
+			stringStreaming( $( inner ), msgs, 0, 3000 );
 			
 		});
 	};
@@ -110,8 +110,8 @@
 				setTimeout( function()
 				{
 					//eventFunc;
-					$( overlay ).hide();
 					$( surface ).hide();
+					$( overlay ).css( "background", "#fff" ).show().fadeTo( 1000, 0 );
 					
 				}, deley );
 			}
