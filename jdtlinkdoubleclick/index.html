@@ -1,8 +1,7 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
+<!DOCTYPE HTML>
+<html>
 <head>
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 	<meta http-equiv="Content-Style-Type" content="text/css" />
 	<meta http-equiv="Content-Script-Type" content="text/javascript" />
 	<title>おや、リンクの様子が・・・ jdtLinkDoubleClick.js</title>
@@ -15,11 +14,31 @@
 		$("p#sample a").jdtLinkDouleClick();
 	});
 	</script>
+<!--[if lt IE 9]>
+	<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+<link href="./css/style.css" rel="stylesheet" type="text/css">
 </head>
 
 <body>
-<p id="sample">
-いまはわけあって<a href="http://google.co.jp">このリンク</a>と<a href="http://yahoo.co.jp">このリンク</a>がダブルクリックでしか使えませんねん。
-</p>
+<div id="container">
+  <header>テキストリンクをすべてダブルクリック仕様にするjQueryプラグイン<!-- end header --> </header>
+  <div id="content">
+    <h1>jdtLinkDoubleClick</h1>
+    <h2>&nbsp; </h2>
+      <section>
+		<h3>sanple1</h3>
+		<p id="sample">いまはわけあって<a href="http://google.co.jp">このリンク</a>と<a href="http://yahoo.co.jp">このリンク</a>は二回押さんと使えませんねん。</p>
+	  </section>
+      <hr />
+	  <section>
+    	<h3>sanple2</h3>
+   		<p>この<a href="http://google.co.jp">リンク</a>とこの<a href="http://yahoo.co.jp">リンク</a>は普通に使えるんですわ。</p>
+		</section>
+<!-- end .content --></div>
+<footer>
+  <p style="text-align:right;"><a href="http://prog.re-d.net">kamiyam</a></p>
+<!-- end footer --></footer>
+<!-- end .container --></div>
 </body>
 </html>

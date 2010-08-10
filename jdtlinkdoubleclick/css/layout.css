@@ -1,0 +1,29 @@
+/* ----- コンテナー ----- */
+#container 
+{
+	width: 960px;
+	background: #FFF;
+	margin: 0 auto; 
+}
+
+/* ----- ヘッダー ----- */
+header 
+{
+	background-color: #F93;
+	padding: 10px;
+}
+
+/* ----- メイン ----- */
+#content 
+{
+	padding-top: 20px;
+	padding-right: 10;
+	padding-bottom: 20px;
+	padding-left: 10;
+}
+
+/* ----- フッター ----- */
+footer {
+	padding: 10px;
+	background-color: #FCDB9E;
+}
