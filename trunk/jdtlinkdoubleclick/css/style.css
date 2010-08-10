@@ -15,8 +15,11 @@ body
 	font: 100%/1.4 "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, Osaka, "ＭＳ Ｐゴシック", "MS P Gothic", sans-serif;
 	background: #42413C;
 	margin: 0;
-	padding: 0;
 	color: #000;
+	padding-top: 30px;
+	padding-right: 0;
+	padding-bottom: 0;
+	padding-left: 0;
 }
 
 
