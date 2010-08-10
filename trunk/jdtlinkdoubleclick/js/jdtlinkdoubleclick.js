@@ -111,7 +111,7 @@
 				{
 					//eventFunc;
 					$( surface ).hide();
-					$( overlay ).css( "background", "#fff" ).show().fadeTo( 1000, 0 );
+					$( overlay ).css( "background", "#fff" ).show().fadeTo( 1000, 0 ).hide("slow");
 					
 				}, deley );
 			}
