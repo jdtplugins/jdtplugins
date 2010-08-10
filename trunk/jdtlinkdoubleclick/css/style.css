@@ -1,0 +1,65 @@
+@charset "utf-8";
+/* -----------------------------------------------------------
+	reset 
+ ----------------------------------------------------------- */
+@import url("html5reset.css");
+
+/* -----------------------------------------------------------
+	layout 
+ ----------------------------------------------------------- */
+@import url("layout.css");
+
+/* ----- body ----- */
+body 
+{
+	font: 100%/1.4 "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, Osaka, "ＭＳ Ｐゴシック", "MS P Gothic", sans-serif;
+	background: #42413C;
+	margin: 0;
+	padding: 0;
+	color: #000;
+}
+
+
+/* ----- リンク ----- */
+a:link 
+{
+	color: #42413C;
+	text-decoration: underline; 
+}
+
+a:visited 
+{
+	color: #6E6C64;
+	text-decoration: underline;
+}
+
+a:hover,
+a:active,
+a:focus
+{ 
+	text-decoration: none;
+}
+
+h1 {
+	text-align: center;
+}
+h2 {
+	line-height: 1.5em;
+	padding-left: 10px;
+}
+h3 {
+	line-height: 1.5em;
+	padding-left: 15px;
+	border-left-width: 5px;
+	border-left-style: solid;
+	border-left-color: #333;
+}
+p {
+	padding-left: 20px;
+}
+section {
+	padding-top: 20px;
+	padding-right: 10px;
+	padding-bottom: 20px;
+	padding-left: 10px;
+}
