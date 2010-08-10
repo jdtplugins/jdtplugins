@@ -9,6 +9,7 @@
  *
  * $Date$
  */
+
 (function($)
 {
 	$.fn.jdtLinkDouleClick = function( options )
@@ -17,7 +18,7 @@
         // 初期値を設定
         var defaults = (
 		{
-            "isAnimate" : false,
+            "isAnimate" : false
         });
 
         // オプション値でオーバーライド
@@ -50,7 +51,7 @@
 	};
 
 	//サファリ判定
-	var isSafari = navigator.userAgent.match( /AppleWebKit\/\d.+Safari\/\d.+/ ) ;
+	var isSafari = navigator.userAgent.match( /AppleWebKit\/\d.+Safari\/\d.+/ ) != null ;
 
 	var overlay = "#overlay";
 	var surface = "#overlay_surface";
@@ -69,7 +70,6 @@
 		//OverLayフェードイン and 実行処理
 		$( overlay ).height( height ).width( width ).show().fadeTo( 1000, 0.8, function()
 		{
-
 			//表示領域設定
 			var scrollTop = isSafari ? document.body.scrollTop : document.documentElement.scrollTop ;
 
@@ -84,7 +84,7 @@
 
 			var msgs = new Array( 	"リンク達の様子がおかしいぞ。ま、まさか・・・",
 									"ゴゴゴゴゴゴゴゴゴゴゴゴゴゴゴゴゴゴゴゴゴっ",
-									"すべてのリンクがダブルクリックリンクになった。！！"
+									"すべてのリンクがダブルクリックリンクになった！？！？！？"
 								);
 
 			///文字ストリーミング
@@ -94,7 +94,7 @@
 	};
 
 	//アニメーション文字出力
-	function stringStreaming( disp, msgGrp, index, deley, eventFunc )
+	function stringStreaming( disp, msgGrp, index, deley )
 	{
 		setTimeout( function()
 		{
