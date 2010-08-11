@@ -1,7 +1,8 @@
+@charset "utf-8";
 /*----------------------------------------------------
 	Reset
 ----------------------------------------------------*/
-html 
+html
 {
 	overflow-y: scroll;
 }
@@ -15,9 +16,9 @@ b, i,
 dl, dt, dd, ol, ul, li,
 fieldset, form, label, legend,
 table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, figcaption, figure, 
+article, aside, canvas, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section, summary,
-time, mark, audio, video 
+time, mark, audio, video
 {
     margin:0;
     padding:0;
@@ -30,7 +31,7 @@ time, mark, audio, video
 
 
 
-strong,em,address 
+strong,em,address
 {
 	font-style: normal;
 	font-weight: normal;
@@ -38,7 +39,7 @@ strong,em,address
 }
 
 /*object,*/
-embed 
+embed
 {
 	vertical-align: top;
 }
@@ -48,21 +49,21 @@ img, acronym
 	border: 0;
 }
 
-a img, :link img, :visited img 
+a img, :link img, :visited img
 {
 	border: none;
 }
 
-:link, :visited 
+:link, :visited
 {
 	text-decoration: none;
 }
 
 
 article,aside,canvas,details,figcaption,figure,
-footer,header,hgroup,menu,nav,section,summary 
+footer,header,hgroup,menu,nav,section,summary
 {
- 
+
 	display:block;
 }
 
@@ -80,7 +81,7 @@ blockquote, q {
 
 blockquote:before,
 blockquote:after,
-q:before, 
+q:before,
 q:after
 {
     content:'';
@@ -98,74 +99,74 @@ a {
 }
 */
 
-ins 
+ins
 {
     background-color:#ff9;
     color:#000;
     text-decoration:none;
 }
 
-mark 
+mark
 {
     background-color:#ff9;
-    color:#000; 
+    color:#000;
     font-style:italic;
     font-weight:bold;
 }
 
-del 
+del
 {
     text-decoration: line-through;
 }
 
-abbr[title], dfn[title] 
+abbr[title], dfn[title]
 {
     border-bottom:1px dotted #000;
     cursor:help;
 }
 
-table 
+table
 {
 	border-collapse: collapse;
 	border-spacing: 0;
 }
 
-caption, th 
+caption, th
 {
 	text-align: left;
 }
 
-hr 
+hr
 {
     display:block;
     height:1px;
-    border:0;   
+    border:0;
     border-top:1px solid #cccccc;
     margin:1em 0;
     padding:0;
 }
 
-input, select 
+input, select
 {
     vertical-align:middle;
 }
 
 
-.clearfix:after 
+.clearfix:after
 {
-  content: ".";  /* 新しい要素を作る */
-  display: block;  /* ブロックレベル要素に */
+  content: ".";  /* 譁ｰ縺励＞隕∫ｴ�ｒ菴懊ｋ */
+  display: block;  /* 繝悶Ο繝�け繝ｬ繝吶Ν隕∫ｴ�↓ */
   clear: both;
   height: 0;
   visibility: hidden;
 }
 
-.clearfix 
+.clearfix
 {
   min-height: 1px;
 }
 
-* html .clearfix 
+* html .clearfix
 {
   height: 1px;
   /*\*//*/
