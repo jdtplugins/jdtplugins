@@ -7,6 +7,10 @@
  * @license      The MIT License
  * @link         http://jdtplugins.googlecode.com/svn/trunk/jdtrunaway/index.html
  *
+ * @Base-script-written-by
+ *               hisasann (http://hisasann.com/housetect/)
+ *               http://hisasann.com/housetect/2009/04/jqueryrunawayfrommouse_part2.html 
+ * 
  * $Date$
  */
 (function($) {
@@ -40,24 +44,24 @@
 	
 	function mover(selector, instance, rate) {
 		var firstPointX = [],
-			firstPointY = [];
+			firstPointY = [],
+			$this = $(selector);
 			
 		// offsetの保存
-		$(selector).each(function(index) {
-			var offset = $(this).offset();
+		$this.each(function(index) {
+			var self = $(this),
+				offset = self.offset();
 			firstPointX[index] = offset.left;
 			firstPointY[index] = offset.top;
 			
-			$(this).after($('<span/>')
+			self.after($('<span/>')
 				.css({
 					display: 'inline-block',
-					width: $(this).width()
+					width: self.width()
 				})
 			);
 		});
 		
-		var $this = $(selector);
-
 		(function(){
 			$this.each(function(index) {
 				var elem = $(this),
