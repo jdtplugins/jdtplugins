@@ -88,13 +88,13 @@
 								);
 
 			///文字ストリーミング
-			stringStreaming( $( inner ), msgs, 0, 2500 );
+			stringStreaming( $( inner ), msgs, 0, 2500, flashOverlay);
 
 		});
 	};
 
 	//アニメーション文字出力
-	function stringStreaming( disp, msgGrp, index, deley )
+	function stringStreaming( disp, msgGrp, index, deley, func )
 	{
 		setTimeout( function()
 		{
@@ -103,19 +103,25 @@
 
 			if ( msgGrp[ index + 1 ] != undefined )
 			{
-				stringStreaming( disp, msgGrp, index + 1, deley );
+				stringStreaming( disp, msgGrp, index + 1, deley, func  );
 			}
 			else
 			{
 				setTimeout( function()
 				{
-					//eventFunc;
-					$( surface ).hide();
-					$( overlay ).css( "background", "#fff" ).show().fadeTo( 1000, 0 ).hide("slow");
+					func();
+					//$( surface ).hide();
+					//$( overlay ).css( "background", "#fff" ).show().fadeTo( 1000, 0 ).hide("slow");
 
 				}, deley );
 			}
 		}, deley );
 	};
-	
+
+	//ホワイトフラッシュ！
+	function flashOverlay()
+	{
+		$( surface ).hide();
+		$( overlay ).css( "background", "#fff" ).show().fadeTo( 1000, 0 ).hide("slow");
+	};
 })(jQuery)
