@@ -1,0 +1,54 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<title>はやく入力してね『カチャカチャカチャ･･･ ッターン！』 ・・・ jdtPleaseHurryInput.js</title>
+	<meta http-equiv="Content-Style-Type" content="text/css" />
+	<meta http-equiv="Content-Script-Type" content="text/javascript" />
+	
+	<!--[if lt IE 9]>
+		<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+	
+	<link href="./css/style.css" rel="stylesheet" type="text/css">
+
+  <script type="text/javascript" src="http://www.google.com/jsapi"></script>
+    <script type="text/javascript">google.load("jquery", '1.4.2');</script>
+    <script type="text/javascript" src="js/jdtpleasehurryinput.js"></script>
+    <script type="text/javascript">
+    jQuery(function($)
+    {
+        $("input").jdtPleaseHurryInput();
+    });
+    </script>
+
+</head>
+
+<body>
+<div id="container">
+  <header>テキストボックスにフォーカスすると5秒以内にブラーしないとdisabledが付くjQueryプラグイン<!-- end header --></header>
+  <div id="content">
+    <h1>jdtPleaseHurryInput</h1>
+      <section>
+		<h3>sanple1</h3>
+	    <p><input type="text" value=""></p>
+	  </section>
+      <hr />
+	  <section>
+    	<h3>sanple2</h3>
+     	<p><input type="text" value=""></p>
+		</section>
+<!-- end .content --></div>
+<footer>
+  <p style="text-align:right;"><a href="http://prog.re-d.net">kamiyam</a></p>
+<!-- end footer --></footer>
+<!-- end .container --></div>
+
+<!-- overlay -->
+<div id="overlay">
+</div>
+<div id="overlay_surface">
+  <div class="overlay_inner">&nbsp;</div>
+</div>
+</body>
+</html>
