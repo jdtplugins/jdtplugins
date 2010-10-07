@@ -11,7 +11,6 @@
  */
 (function($) 
 {
-	
     //5カウント
     var limitCount = 5 * 1000;
     
@@ -21,18 +20,19 @@
  		$(this).each( function() 
 		{
 			$(this).focus( function()
-				{
-					var that = this;
-					var obj = setTimeout( function ()
-									{
-										$(that).attr("disabled", "disabled");
-									},
-									limitCount  );
-					$(this).blur( function(){ clearTimeout( obj ); });
-				} );
+			{
+				var that = this;
+				var obj = setTimeout( function ()
+								{
+									$( that ).attr("disabled", "disabled");
+								},
+								limitCount  );
+				$(this).blur( function(){	clearTimeout( obj ); });
+			} );
+			
 		});
 		
-		return (this);
+		return ( this );
     };
     
 })(jQuery)
