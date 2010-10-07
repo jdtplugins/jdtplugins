@@ -14,6 +14,7 @@
     //5カウント
     var limitCount = 5 * 1000;
     
+	//実行
     $.fn.jdtPleaseHurryInput = function() 
     {
  		$(this).each( function() 
