@@ -1,11 +1,11 @@
 /**
  * jDTPleaseHurryInput
  *
- * @version      $Rev$
- * @author       kamiyam (http://twitter.com/kamiyam)
- * @copyright    (c) 2010 誰が使うの？何の役にも立たないjQueryプラグイン
- * @license      The MIT License
- * @link         http://jdtplugins.googlecode.com/svn/trunk/jdtpleasehurryinput/index.html
+ * @version     $Rev$
+ * @author      kamiyam (http://twitter.com/kamiyam)
+ * @copyright   (c) 2010 誰が使うの？何の役にも立たないjQueryプラグイン
+ * @license     The MIT License
+ * @link        http://jdtplugins.googlecode.com/svn/trunk/jdtpleasehurryinput/index.html
  *
  * $Date$
  */
