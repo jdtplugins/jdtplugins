@@ -10,6 +10,7 @@
 header 
 {
 	background: #ADB96E;
+	padding: 10px;
 }
 
 /* ----- メイン ----- */
@@ -20,8 +21,9 @@ header
 }
 
 /* ----- フッター ----- */
-footer {
-	padding: 10px 0;
+footer 
+{
+	padding: 10px;
 	background: #CCC49F;
 }
 

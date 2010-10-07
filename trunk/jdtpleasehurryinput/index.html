@@ -18,7 +18,35 @@
     <script type="text/javascript">
     jQuery(function($)
     {
+		//プラグイン実行
         $("input").jdtPleaseHurryInput();
+		
+		//以下おまけ
+		var exsample = "What we really need is this 'daretoku plugin'.";
+
+		$(document).keydown( function(e) 
+		{
+			if ( e.keyCode == 17 )
+			{
+				//ctrlボタンを押した
+				alert("もしかして：コピペ？");
+			}
+		});
+		
+		setTimeout( function()
+			{
+				$("p#example").css( "opacity", 0.0 ).html(exsample).fadeTo( 1000,1.0 );
+			},
+			2 * 1000 );
+			
+		$("#question2").attr("disabled", "disabled");
+		$("#question1").focus( function ()
+			{
+				setTimeout( function()
+					{
+						$("#question2").removeAttr("disabled"); 
+					}, 5 * 1000 );
+			});
     });
     </script>
 
@@ -30,13 +58,16 @@
   <div id="content">
     <h1>jdtPleaseHurryInput</h1>
       <section>
-		<h3>sanple1</h3>
-	    <p><input type="text" value=""></p>
+		<h3>問題1</h3>
+        <p>次の文章を5秒で入力してね。</p>
+     	<p id="example">&nbsp;</p>
+	    <p><input type="text" id="question1" value=""></p>
 	  </section>
       <hr />
 	  <section>
-    	<h3>sanple2</h3>
-     	<p><input type="text" value=""></p>
+    	<h3>問題2</h3>
+     	<p>もっかいやっとく？</p>
+		<p><input type="text" id="question2" value="">&nbsp;</p>
 		</section>
 <!-- end .content --></div>
 <footer>
