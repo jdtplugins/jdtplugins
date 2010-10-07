@@ -11,13 +11,9 @@
  */
 (function($) 
 {
-	jdtPHI = 
-	{};
-	
     //5カウント
     var limitCount = 5 * 1000;
     
-    //10カウント実行
     $.fn.jdtPleaseHurryInput = function() 
     {
  		$(this).each( function() 
