@@ -11,6 +11,7 @@
 	<![endif]-->
 	
 	<link href="css/style.css" rel="stylesheet" type="text/css">
+	<link href="css/jdtmdnstrongenter.css" rel="stylesheet" type="text/css">
 
     <script type="text/javascript" src="http://www.google.com/jsapi"></script>
     <script type="text/javascript">google.load("jquery", '1.4.2');</script>
@@ -19,7 +20,7 @@
     jQuery(function($)
     {
 		//プラグイン実行
-        $( "#textarea1" ).jdtMdnStrongEnter( $( "#view" ) );
+        $( "#textarea1" ).jdtMdnStrongEnter();
     });
     </script>
 
@@ -30,23 +31,21 @@
   <div id="content">
     <h1>jdtMdnStrongEnter</h1>
       <section>
-		<h3>問題1</h3>
-        <p>試しにこれ・・・入れてみようか</p>
-        <div style="border:#999; border-width:5px; border-style:solid; background-color:#CCC ">
+		<h3>試しにこれ・・・入れてみようか</h3>
+      <div style="border:#999; border-width:5px; border-style:solid; background-color:#CCC ">
         	<p>つれー　昨日実質1時間しか寝てないからつれーわー<br>
 				実質1時間しか寝てないからなー</p>
         </div>
-
-     	<p id="view">&nbsp;</p>
 	    <p><textarea name="textarea1" id="textarea1" cols="" rows="" style="width:80%; height: 300px;"></textarea></p>
 
-	  </section>
+  </section>
+      <!--
       <hr />
 	  <section>
     	<h3>ダウンロード</h3>
      	<p>ダウンロードはここから</p>
 		<p><a href="http://code.google.com/p/jdtplugins/downloads/detail?name=jdtmdnstrongenter.zip&can=2&q="><img src="image/btn_download.png" alt="download"></a></p>
-	</section>   
+	</section>   -->
 <!-- end .content --></div>
 <footer>
   <p style="text-align:right;"><a href="http://prog.re-d.net">kamiyam</a></p>
