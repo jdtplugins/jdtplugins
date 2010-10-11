@@ -14,86 +14,87 @@
 	//実行
     $.fn.jdtMdnStrongEnter = function()
     {
-		//入力オブジェクト
-		var tarObj = $(this);
-
-		//値比較用
-		var temp = "";
-
-		//イメージ表示管理ハンドラー
-		var handler = imageHandler();
-
-		//タイマーオブジェクト
-		var timer;
-
-		//クロム管理用
-		var chromeExt = 
+		$(this).each( function() 
 		{
-			isChrome : /chrome/i.test(navigator.userAgent),
-			timerEvent : null,
-			tempString : ""
-		}
-
-		//イベント設定
-		$(this)
-		.focus( function()
-		{
-			//タイマー開始
-			timer = setInterval( function()
+			//入力オブジェクト
+			var tarObj = $(this);
+	
+			//値比較用
+			var temp = "";
+	
+			//イメージ表示管理ハンドラー
+			var handler = imageHandler();
+	
+			//タイマーオブジェクト
+			var timer;
+	
+			//クロム管理用
+			var chromeExt = 
 			{
-				var val = jQuery.trim( $(tarObj).val() );
-				if ( temp != val )
-				{
-					handler.view( Type.Kacha );
-				}
-				temp = val;
-			}, 100 );
-		})
-		.blur( function()
-		{
-			//タイマーキャンセル
-			clearInterval( timer );
-		})
-		.keyup( function(e)
-		{
-			//エンター判定
-			var keyCode = e.keyCode;
-			if ( keyCode == 13 )
-			{
-				handler.view( Type.nTaaan );
+				isChrome : /chrome/i.test(navigator.userAgent),
+				timerEvent : null,
+				tempString : ""
 			}
-		})
-		.keydown( function(e)
-		{
-			//IME判定
-			var keyCode = e.keyCode;
-			if ( chromeExt.isChrome && keyCode == 229 )	//chromeでIMEon
+	
+			//イベント設定
+			$(this)
+			.focus( function()
 			{
-				//初期化
-				clearTimeout(chromeExt.timerEvent);
-				
-				//input.val()の実行を少し遅らせる
-				chromeExt.timerEvent = setTimeout( function()
+				//タイマー開始
+				timer = setInterval( function()
 				{
-					//入力値
-					var val = $(tarObj).val();	//トリムはしない
-					
-					//enter判定（前の入力値と比較する）
-					if ( val == chromeExt.tempString )
+					var val = jQuery.trim( $(tarObj).val() );
+					if ( temp != val )
 					{
-						//ッターン！
-						handler.view( Type.nTaaan );
-						//念のため
-						clearTimeout( chromeExt.timerEvent );
+						handler.view( Type.Kacha );
 					}
-					//入力値格納
-					chromeExt.tempString = val;
+					temp = val;
+				}, 100 );
+			})
+			.blur( function()
+			{
+				//タイマーキャンセル
+				clearInterval( timer );
+			})
+			.keyup( function(e)
+			{
+				//エンター判定
+				var keyCode = e.keyCode;
+				if ( keyCode == 13 )
+				{
+					handler.view( Type.nTaaan );
+				}
+			})
+			.keydown( function(e)
+			{
+				//IME判定
+				var keyCode = e.keyCode;
+				if ( chromeExt.isChrome && keyCode == 229 )	//chromeでIMEon
+				{
+					//初期化
+					clearTimeout(chromeExt.timerEvent);
 					
-				}, 5 );
-			}
-		});
-
-
+					//input.val()の実行を少し遅らせる
+					chromeExt.timerEvent = setTimeout( function()
+					{
+						//入力値
+						var val = $(tarObj).val();	//トリムはしない
+						
+						//enter判定（前の入力値と比較する）
+						if ( val == chromeExt.tempString )
+						{
+							//ッターン！
+							handler.view( Type.nTaaan );
+							//念のため
+							clearTimeout( chromeExt.timerEvent );
+						}
+						//入力値格納
+						chromeExt.tempString = val;
+						
+					}, 5 );
+				}
+			});
+		});		
 		return ( this );
     };
 
