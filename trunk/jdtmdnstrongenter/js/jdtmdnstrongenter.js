@@ -1,13 +1,13 @@
 /**
  * jDTMdnStrongEnter
  *
- * @version     $Rev: 175 $
+ * @version     $Rev$
  * @author      kamiyam (http://twitter.com/kamiyam)
  * @copyright   (c) 2010 誰が使うの？何の役にも立たないjQueryプラグイン
  * @license     The MIT License
  * @link        http://jdtplugins.googlecode.com/svn/trunk/jdtmdnstrongenter/index.html
  *
- * $Date: 2010-10-07 16:38:35 +0900 (木, 07 10 2010) $
+ * $Date$
  */
 (function($)
 {
