@@ -26,6 +26,14 @@
 		//タイマーオブジェクト
 		var timer;
 
+		//クロム管理用
+		var chromeExt = 
+		{
+			isChrome : /chrome/i.test(navigator.userAgent),
+			timerEvent : null,
+			tempString : ""
+		}
+
 		//イベント設定
 		$(this)
 		.focus( function()
@@ -57,7 +65,26 @@
 		})
 		.keydown( function(e)
 		{
-			//使えなかった。
+			//IME判定
+			var keyCode = e.keyCode;
+			console.log(e);
+			if ( chromeExt.isChrome && keyCode == 229 )
+			{
+				clearTimeout(chromeExt.timerEvent);
+				chromeExt.timerEvent = setTimeout( function()
+				{
+					var val = jQuery.trim( $(tarObj).val() );
+					if ( val == chromeExt.tempString )
+					{
+						handler.view( Type.nTaaan );
+						clearTimeout( chromeExt.timerEvent );
+					}
+					chromeExt.tempString = val;
+					
+				}, 5 );
+			}
+			
+			//以下IMEonで使えなかった。
 
 //			var keyCode = e.keyCode;
 //			if
