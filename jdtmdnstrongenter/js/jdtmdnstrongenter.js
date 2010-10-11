@@ -168,7 +168,7 @@
 				pos = p_getRandamPos( max.x - $(_kacha).width(), max.y - $(_kacha).height() );
 
 				//表示
-				$(_kacha).stop().show().css( { "opacity":1.0,"top":pos.x,"left":pos.y } ).fadeTo( 300, 0.0 );
+				$(_kacha).stop().show().css( { "opacity":1.0,"top":pos.x,"left":pos.y } ).fadeOut( 300, function(){ $(_kacha).hide(); } );
 			}
 			else if( type == 2 )
 			{
@@ -179,7 +179,7 @@
 				$(_ntaaan).stop().show().css( { "opacity":1.0,"top":pos.x,"left":pos.y } );
 
 				//余韻を残す
-				setTimeout( function(){ $(_ntaaan).fadeTo( 400, 0.0 ); }, 500 );
+				setTimeout( function(){ $(_ntaaan).fadeOut( 400, function(){ $(_kacha).hide(); } ); }, 500 );
 			}
 		}
 
