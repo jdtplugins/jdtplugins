@@ -67,18 +67,25 @@
 		{
 			//IME判定
 			var keyCode = e.keyCode;
-			console.log(e);
-			if ( chromeExt.isChrome && keyCode == 229 )
+			if ( chromeExt.isChrome && keyCode == 229 )	//chromeでIMEon
 			{
+				//初期化
 				clearTimeout(chromeExt.timerEvent);
+				
+				//input.val()の実行を少し遅らせる
 				chromeExt.timerEvent = setTimeout( function()
 				{
+					//入力値
 					var val = jQuery.trim( $(tarObj).val() );
+					//enter判定（前の入力値と比較する）
 					if ( val == chromeExt.tempString )
 					{
+						//ッターン！
 						handler.view( Type.nTaaan );
+						//念のため
 						clearTimeout( chromeExt.timerEvent );
 					}
+					//入力値格納
 					chromeExt.tempString = val;
 					
 				}, 5 );
@@ -154,7 +161,7 @@
 			return pos;
 		};
 
-		//ハンドラーオブジェクト
+		//ハンドラーオブジェクト『それ』
 		var that = {};
 
 		//表示メソッド
