@@ -161,6 +161,8 @@
 			}
 			else if( type == 2 )
 			{
+				$(_kacha).stop();
+				
 				//表示位置
 				pos = p_getRandamPos( max.x - $(_ntaaan).width(), max.y - $(_ntaaan).height() );
 
