@@ -76,7 +76,8 @@
 				chromeExt.timerEvent = setTimeout( function()
 				{
 					//入力値
-					var val = jQuery.trim( $(tarObj).val() );
+					var val = $(tarObj).val();	//トリムはしない
+					
 					//enter判定（前の入力値と比較する）
 					if ( val == chromeExt.tempString )
 					{
@@ -90,26 +91,6 @@
 					
 				}, 5 );
 			}
-			
-			//以下IMEonで使えなかった。
-
-//			var keyCode = e.keyCode;
-//			if
-//			( 	keyCode == 32 ||
-//				keyCode == 106 ||
-//				keyCode == 107 ||
-//				keyCode == 226 ||
-//				keyCode == 229 ||	//IMEon入力イベント
-//			 	( 48 <= keyCode && keyCode >= 57 ) ||
-//				( 65 <= keyCode && keyCode >= 90 ) ||
-//				( 96 <= keyCode && keyCode >= 105 ) ||
-//				( 109 <= keyCode && keyCode >= 111 ) ||
-//				( 186 <= keyCode && keyCode >= 192 ) ||
-//				( 219 <= keyCode && keyCode >= 222 )
-//			)
-//			{
-//				$(view).stop().html("カチャ").css( "opacity", 1.0 ).fadeTo( 500, 0.0 );
-//			}
 		});
 
 
