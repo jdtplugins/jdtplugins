@@ -1,9 +1,5 @@
-@charset "utf-8";
-/* CSS Document */
-
 /*カチャ*/
 #kacha {
-	/*display: none;*/
 	position: absolute;
 	z-index: 8998;
 	left: 0px;
@@ -14,7 +10,6 @@
 /*ッターン*/
 #ntaaan 
 {
-	/*display: none;*/
 	position: absolute;
 	z-index: 8999;
 	left: 0px;
