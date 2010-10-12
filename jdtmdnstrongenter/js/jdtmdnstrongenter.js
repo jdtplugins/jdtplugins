@@ -27,11 +27,12 @@
 	
 			//タイマーオブジェクト
 			var timer;
-	
+
 			//クロム管理用
 			var chromeExt = 
 			{
-				isChrome : /chrome/i.test(navigator.userAgent),
+				isWinChrome : /chrome/i.test(navigator.userAgent) &&
+							/Win/i.test(navigator.userAgent),
 				timerEvent : null,
 				tempString : ""
 			}
@@ -69,7 +70,7 @@
 			{
 				//IME判定
 				var keyCode = e.keyCode;
-				if ( chromeExt.isChrome && keyCode == 229 )	//chromeでIMEon
+				if ( chromeExt.isWinChrome && keyCode == 229 )	//chromeでIMEon
 				{
 					//初期化
 					clearTimeout(chromeExt.timerEvent);
@@ -160,9 +161,7 @@
 				$(_kacha).stop().show().css( { "opacity":1.0,"top":pos.x,"left":pos.y } ).fadeOut( 300, function(){ $(_kacha).hide(); } );
 			}
 			else if( type == 2 )
-			{
-				$(_kacha).stop();
-				
+			{				
 				//表示位置
 				pos = p_getRandamPos( max.x - $(_ntaaan).width(), max.y - $(_ntaaan).height() );
 
