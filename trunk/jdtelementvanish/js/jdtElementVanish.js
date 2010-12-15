@@ -49,10 +49,6 @@
 		//実行
 		function proc( target, conf )
 		{
-			$( "span#title" ).animate( { opacity: "0" }, 20 * 1000 );
-			$( "h1" ).animate( { opacity: "0" }, 20 * 1000 );
-			$( "address" ).animate( { opacity: "0" }, 20 * 1000 );
-			
 			$( target ).addClass( rootClass ); 
 			
 			intFunc = setInterval( function(){ recursion( $( target ) ); }, conf.interval );

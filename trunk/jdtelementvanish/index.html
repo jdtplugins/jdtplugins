@@ -19,6 +19,13 @@
 			{ 	"interval" : 1000,
 				"animate" : 2000 
 			});
+
+		//スペシャル			
+		$( "span#title" ).animate( { opacity: "0" }, 20 * 1000 );
+		$( "h1" ).animate( { opacity: "0" }, 20 * 1000 );
+		$( "address" ).animate( { opacity: "0" }, 20 * 1000 );
+		setTimeout( function(){$( "body" ).animate( { opacity: "0" }, 5 * 1000 );}, 18 * 1000 );
+
     });
     </script>
 </head>
