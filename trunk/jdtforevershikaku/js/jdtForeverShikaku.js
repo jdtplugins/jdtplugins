@@ -1,5 +1,5 @@
 /**
- * jDT
+ * jDTForeverShikaku
  *
  * @version     $Rev: 194 $
  * @author      kamiyam (http://twitter.com/kamiyam)
