@@ -1,0 +1,58 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<title>儚く消えゆくエレメント</title>
+<link href="./css/style.css" rel="stylesheet" type="text/css">
+<!--[if lt IE 9]>
+	<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+<script type="text/javascript" src="http://www.google.com/jsapi"></script>
+<script type="text/javascript">google.load("jquery", '1.4.2');</script>
+<script type="text/javascript" src="js/jdtElementVanish.js"></script>
+    <script type="text/javascript">
+    jQuery(function($)
+    {
+		//プラグイン実行
+        $( "div#target" ).jdtElementVanish(
+			{ 	"interval" : 1000,
+				"animate" : 2000 
+			});
+    });
+    </script>
+</head>
+<body>
+<div id="container">
+<header><span id="title">消えていく儚さを演出するjQueryプラグイン</span></header>
+<div id="content">
+    <h1>jdtElementVanish</h1>
+<div id="target" class="elem">root
+<div class="elem">parent1
+  <div class="elem">parent1 - child1</div>
+  <div class="elem">parent1 - child2</div>
+  <div class="elem">parent1 - child3</div>
+  <div class="elem">parent1 - child4</div>
+</div>
+<div class="elem">parent2
+  <div class="elem">parent2 - child1</div>
+  <div class="elem">parent2 - child2</div>
+  <div class="elem">parent2 - child3</div>
+  <div class="elem">parent2 - child4
+      <div class="elem">parent2 - child4 - g_child1</div>
+      <div class="elem">parent2 - child4 - g_child2</div>
+      <div class="elem">parent2 - child4 - g_child3</div>
+      <div class="elem">parent2 - child4 - g_child4</div>
+  </div>
+</div>
+</div>
+</div>
+
+<footer>
+  <address>
+  <a href="http://prog.re-d.net/">kamiyam</a>
+  </address>
+</footer></div>
+</body>
+
+</html>
