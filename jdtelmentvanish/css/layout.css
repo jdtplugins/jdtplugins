@@ -1,0 +1,28 @@
+/* ----- コンテナー ----- */
+#container 
+{
+	width: 960px;
+	background: #FFF;
+	margin: 0 auto; 
+}
+
+/* ----- ヘッダー ----- */
+header 
+{
+	background: #ADB96E;
+	padding: 20px;
+}
+
+/* ----- メイン ----- */
+article
+{
+
+	padding: 10px 0;
+}
+
+/* ----- フッター ----- */
+footer {
+	padding: 10px 0;
+	background: #CCC49F;
+}
+
