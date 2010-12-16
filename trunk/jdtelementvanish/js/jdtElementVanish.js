@@ -18,7 +18,7 @@
 	var rootClass = "jdtElementVanishRoot";
 	
 	// 初期値
-    var defaults = { "interval" : 1 * 1000, "animate" : 1 * 1000, "ie6only" : false };
+    var defaults = { "interval" : 1 * 1000, "animate" : 1 * 1000, "last" : 5 * 1000, "ie6only" : false };
 	
 	//setInterval実行関数
 	var intFunc;
@@ -58,19 +58,20 @@
 		function recursion( target )
 		{
 			if ( $( target ).hasClass( rootClass ) 
-					&& $( target ).hasClass( markerClass ) )
+			     && $( target ).hasClass( markerClass ) )
 			{
-				clearInterval( intFunc );
-				return;
+                clearInterval( intFunc );
+                return;
 			}
 
 			var nodes = $( target ).children( ":not(." + markerClass + ")" );
 			var count = nodes.size();
 	
-			if ( count == 0 )
+			if ( count === 0 )
 			{
-				//$( target ).text( 'はかないねぇ' );
-				$( target ).animate( { opacity: "0" }, conf.animate ).addClass( markerClass );
+				var animeteTime = $( target ).hasClass( rootClass ) ? conf.last : conf.animate;
+			    $( target ).animate( { opacity: "0" }, animeteTime ).addClass( markerClass );
+				
 				return;
 			}
 			else
