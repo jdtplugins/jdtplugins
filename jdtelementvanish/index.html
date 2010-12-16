@@ -15,17 +15,11 @@
     jQuery(function($)
     {
 		//プラグイン実行
-        $( "div#target" ).jdtElementVanish(
-			{ 	"interval" : 1000,
-				"animate" : 2000 
+        $( "div#container" ).jdtElementVanish(
+			{ 	"interval" : 1 * 1000,
+				"animate" : 2 * 1000,
+				"last" : 5 * 1000
 			});
-
-		//スペシャル			
-		$( "span#title" ).animate( { opacity: "0" }, 20 * 1000 );
-		$( "h1" ).animate( { opacity: "0" }, 20 * 1000 );
-		$( "address" ).animate( { opacity: "0" }, 20 * 1000 );
-		setTimeout( function(){$( "body" ).animate( { opacity: "0" }, 5 * 1000 );}, 18 * 1000 );
-
     });
     </script>
 </head>
@@ -44,8 +38,8 @@
 <div class="elem">ハンパない儚さ
   <div class="elem">儚いなら</div>
   <div class="elem">儚いとき</div>
-  <div class="elem">儚いなら</div>
-  <div class="elem">
+  <div class="elem">儚くね</div>
+  <div class="elem">儚いって？
       <div class="elem">儚いとは？</div>
       <div class="elem">儚いさ</div>
       <div class="elem">儚いの？</div>
